@@ -23,8 +23,9 @@ class Metadata:
         Property(property_dicts.GROUND),
     )
 
-    def __init__(self, serial_number, html="test.gov", token_id="1"):
+    def __init__(self, serial_number,serial_number_two, html="test.gov", token_id="1"):
         self.serial_number_ = serial_number
+        self.serial_number_two_ = serial_number_two
         self.html_ = html
         self.token_id_ = token_id
 
@@ -33,20 +34,29 @@ class Metadata:
 
         for prop in self.property_list_:
             print(prop.get_property_group())
-            trait_dict = {
-                "trait_type": prop.get_property_group(),
-                "value": prop.get_trait(self.serial_number_),
-            }
+            if prop.get_property_number() == 1:
+                trait_dict = {
+                    "trait_type": prop.get_property_group(),
+                    "value": prop.get_trait(self.serial_number_),
+                }
+            elif prop.get_property_number() == 2:
+                trait_dict = {
+                    "trait_type": prop.get_property_group(),
+                    "value": prop.get_trait(self.serial_number_two_),
+                }
+            else:
+                raise "Invalid serial number selection in property"
             attribute_list.append(trait_dict)
         json_dict = {
-            "name": f"Ed Run #{self.token_id_}",
+            "name": f"Run Ed #{self.token_id_}",
             "image": f"{self.html_}/{self.token_id_}.mp4",
             "attribute": attribute_list,
         }
         json_object = json.dumps(json_dict, indent=4)
-        print(json_object)
+        with open(f'{self.token_id_}_{self.serial_number_two_}_{self.serial_number_}.json', 'w') as f:
+            json.dump(json_object, f)
 
 
 if __name__ == "__main__":
-    m = Metadata(71469330866450)
+    m = Metadata(71469330866450, 272)
     m.generate_json()
