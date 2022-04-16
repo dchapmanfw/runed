@@ -762,7 +762,7 @@ browserify-zlib@~0.2.0:
 
 browserify@^17.0.0:
   version "17.0.0"
-  resolved "https://registry.npmjs.org/browserify/-/browserify-17.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/browserify/-/browserify-17.0.0.tgz#4c48fed6c02bfa2b51fd3b670fddb805723cdc22"
   integrity sha512-SaHqzhku9v/j6XsQMRxPyBrSP3gnwmE27gLJYZgMT2GeK3J0+0toN+MnuNYDfHwVGQfLiMZ7KSNSIXHemy905w==
   dependencies:
     JSONStream "^1.0.3"

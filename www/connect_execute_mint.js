@@ -1,8 +1,8 @@
 // CONNECT_EXECUTE_MINT.JS //
 
 
-
 const { ethers } = require("ethers");
+
 
 async function connectwallet() {
 	
@@ -55,18 +55,18 @@ function edballoon(){
 
 	// connecting user wallet
 
-function connectwallet(){
-
-	// insert metamask call here
-	
-alert("CONNECT FUNCTION GOES HERE");
-	
-	// move this part of the funciton to the metamask "Sucsessfully Connected" function
-
-$("div.connect_wallet_button").fadeOut(500);
-$("div.execute_mint_class").fadeIn(2000);
-
-}
+//function connectwallet(){
+//
+//	// insert metamask call here
+//	
+//alert("CONNECT FUNCTION GOES HERE");
+//	
+//	// move this part of the funciton to the metamask "Sucsessfully Connected" function
+//
+//$("div.connect_wallet_button").fadeOut(500);
+//$("div.execute_mint_class").fadeIn(2000);
+//
+//}
 
 	// this function hides the execute box and reveals the connect button when the wallet is disconected.
 
@@ -168,7 +168,17 @@ String.prototype.getDecimals || (String.prototype.getDecimals = function() {
 });
 
 
-
-
-
+module.exports = {
+art,
+perform,
+olderelder,
+edballoon,
+connectwallet,
+execute,
+validate,
+validate2,
+validate3,
+validate4,
+execute_mint,
+};
            

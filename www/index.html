@@ -30,7 +30,9 @@
     <link rel="stylesheet" type="text/css" href="css/meetedb-html-web-1920.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://animaapp.s3.amazonaws.com/launchpad-static/launchpad.js"></script>
-	  <script src="index.js"></script>
+	  <!script src="./connect_execute_mint.js"><!/script>
+	  <!script src="./connect_coming_soon.js"><!/script>
+	  <script src="./dist/bundle.js" type="module"></script>
 	  
     <style></style>
     <link rel="stylesheet" type="text/css" href="css/styleguide.css" />
@@ -123,15 +125,15 @@
         <div class="section-6-ed-irl-TEYHDu" id="section-6-ed-irl">
           <div class="strip_6_ed_irl-PbjJYC"></div>
           <div class="ed_irl_text-PbjJYC">
-            <div class="ed-balloon-founder-vBMTrO basis33-regular-normal-black-36px cursor_change" onClick="edballoon()">ED BALLOON | FOUNDER</div>
+            <div class="ed-balloon-founder-vBMTrO basis33-regular-normal-black-36px cursor_change" onClick="bundle.edballoon()">ED BALLOON | FOUNDER</div>
             <div class="ed-balloon-is-an-act-vBMTrO courier-normal-black-16px">
               <span class="span0-xx4zrF courier-regular-normal-black-16px"
                 >Ed Balloon is an active web3 artist, musician, and community leader.<br /><br />See Ed’s </span
-              ><span class="span1-xx4zrF courier-bold-black-16px cursor_change" onClick="art()">Art</span
+              ><span class="span1-xx4zrF courier-bold-black-16px cursor_change" onClick="bundle.art()">Art</span
               ><span class="span2-xx4zrF courier-regular-normal-black-16px">. | Watch Ed </span
-              ><span class="span3-xx4zrF courier-bold-black-16px cursor_change" onClick="perform()">Perform</span
+              ><span class="span3-xx4zrF courier-bold-black-16px cursor_change" onClick="bundle.perform()">Perform</span
               ><span class="span4-xx4zrF courier-regular-normal-black-16px">.<br /><br /></span
-              ><span class="span5-xx4zrF courier-regular-normal-black-12px cursor_change" onClick="olderelder()">&lt;— photo: @OLDERELDER</span>
+              ><span class="span5-xx4zrF courier-regular-normal-black-12px cursor_change" onClick="bundle.olderelder()">&lt;— photo: @OLDERELDER</span>
             </div>
           </div>
           <img class="ed-b_irl-PbjJYC" src="img/ed-b-irl@1x.png" />
@@ -298,7 +300,7 @@
 					<span class="checkmark"></span>
 	 			</label>
 				</div>
-              <div class="mint-button-eeKRWD smart-layers-pointers" onClick="validate()">
+              <div class="mint-button-eeKRWD smart-layers-pointers" onClick="bundle.validate()">
                 <img class="mint_box-gunfFB" src="img/path-1-1@1x.png" />
                 <div class="mint-run-ed-gunfFB basis33-regular-normal-sweet-pink-23px">
                   &gt;&gt; MINT RUN ED &lt;&lt;
@@ -366,7 +368,7 @@
           ><img class="balloon-zi4xx4" src="img/balloon-1@1x.png" />
         </div>
         <div class="menu-buttons-TEYHDu">
-          <div class="connect-button-pBVC12 smart-layers-pointers connect_wallet_button" onClick="connectwallet()">
+          <div class="connect-button-pBVC12 smart-layers-pointers connect_wallet_button" onClick="bundle.connectwallet()">
             <div class="connect_button-rolQ7s"></div>
             <div class="connect-rolQ7s basis33-regular-normal-white-26px">CONNECT</div>
           </div>
@@ -458,15 +460,15 @@
         <div class="section-6-ed-irl1-Ij4xXV" id="section-6-ed-irl1">
           <div class="strip_6_ed_irl-YoPNCx"></div>
           <div class="ed_irl_text-YoPNCx">
-            <div class="ed-balloon-founder-GxiG1l basis33-regular-normal-black-36px cursor_change" onClick="edballoon()">ED BALLOON | FOUNDER</div>
+            <div class="ed-balloon-founder-GxiG1l basis33-regular-normal-black-36px cursor_change" onClick="bundle.edballoon()">ED BALLOON | FOUNDER</div>
             <div class="ed-balloon-is-an-act-GxiG1l courier-normal-black-16px">
               <span class="span0-x9aKLf courier-regular-normal-black-16px"
                 >Ed Balloon is an active web3 artist, musician, and community leader.<br /><br />See Ed’s </span
-              ><span class="span1-x9aKLf courier-bold-black-16px cursor_change" onClick="art()">Art</span
+              ><span class="span1-x9aKLf courier-bold-black-16px cursor_change" onClick="bundle.art()">Art</span
               ><span class="span2-x9aKLf courier-regular-normal-black-16px">. | Watch Ed </span
-              ><span class="span3-x9aKLf courier-bold-black-16px cursor_change" onClick="perform()">Perform</span
+              ><span class="span3-x9aKLf courier-bold-black-16px cursor_change" onClick="bundle.perform()">Perform</span
               ><span class="span4-x9aKLf courier-regular-normal-black-16px">.<br /><br /></span
-              ><span class="span5-x9aKLf courier-regular-normal-black-12px cursor_change" onClick="olderelder">&lt;— photo: @OLDERELDER</span>
+              ><span class="span5-x9aKLf courier-regular-normal-black-12px cursor_change" onClick="bundle.olderelder">&lt;— photo: @OLDERELDER</span>
             </div>
           </div>
           <img class="ed-b_irl-YoPNCx" src="img/ed-b-irl@1x.png" />
@@ -628,7 +630,7 @@
 					<span class="checkmark"></span>
 	 			</label>
 				</div>
-              <div class="mint-button-CCzriY smart-layers-pointers" onClick="validate2()">
+              <div class="mint-button-CCzriY smart-layers-pointers" onClick="bundle.validate2()">
                 <img class="mint_box-U5ZkEe" src="img/path-1-1@1x.png" />
                 <div class="mint-run-ed-U5ZkEe basis33-regular-normal-sweet-pink-23px">
                   &gt;&gt; MINT RUN ED &lt;&lt;
@@ -697,7 +699,7 @@
           ><img class="balloon-GyxwzY" src="img/balloon-1@1x.png" />
         </div>
         <div class="menu-buttons-Ij4xXV">
-          <div class="connect-button-dE5s0o smart-layers-pointers connect_wallet_button" onClick="connectwallet()">
+          <div class="connect-button-dE5s0o smart-layers-pointers connect_wallet_button" onClick="bundle.connectwallet()">
             <div class="connect_button-xJ5sRL"></div>
             <div class="connect-xJ5sRL basis33-regular-normal-white-26px">CONNECT</div>
           </div>
@@ -789,15 +791,15 @@
         <div class="section-6-ed-irl2-bW58j5" id="section-6-ed-irl2">
           <div class="strip_6_ed_irl-nGxmxS"></div>
           <div class="ed_irl_text-nGxmxS">
-            <div class="ed-balloon-founder-xc2OVc basis33-regular-normal-black-36px cursor_change" onClick="edballoon()">ED BALLOON | FOUNDER</div>
+            <div class="ed-balloon-founder-xc2OVc basis33-regular-normal-black-36px cursor_change" onClick="bundle.edballoon()">ED BALLOON | FOUNDER</div>
             <div class="ed-balloon-is-an-act-xc2OVc courier-normal-black-16px">
               <span class="span0-fhzMVp courier-regular-normal-black-16px"
                 >Ed Balloon is an active web3 artist, musician, and community leader.<br /><br />See Ed’s </span
-              ><span class="span1-fhzMVp courier-bold-black-16px cursor_change" onClick="art()">Art</span
+              ><span class="span1-fhzMVp courier-bold-black-16px cursor_change" onClick="bundle.art()">Art</span
               ><span class="span2-fhzMVp courier-regular-normal-black-16px">. | Watch Ed </span
-              ><span class="span3-fhzMVp courier-bold-black-16px cursor_change" onClick="perform()">Perform</span
+              ><span class="span3-fhzMVp courier-bold-black-16px cursor_change" onClick="bundle.perform()">Perform</span
               ><span class="span4-fhzMVp courier-regular-normal-black-16px">.<br /><br /></span
-              ><span class="span5-fhzMVp courier-regular-normal-black-12px cursor_change" onClick="olderelder">^photo: @OLDERELDER</span>
+              ><span class="span5-fhzMVp courier-regular-normal-black-12px cursor_change" onClick="bundle.olderelder">^photo: @OLDERELDER</span>
             </div>
           </div>
           <img class="ed-b_irl-nGxmxS" src="img/ed-b-irl-3@1x.png" />
@@ -961,7 +963,7 @@
 					<span class="checkmark"></span>
 	 			</label>
 				</div>
-              <div class="mint-button-hUB9xh smart-layers-pointers" onClick="validate3()">
+              <div class="mint-button-hUB9xh smart-layers-pointers" onClick="bundle.validate3()">
                 <img class="mint_box-q78KQc" src="img/path-1-1@1x.png" />
                 <div class="mint-run-ed-q78KQc basis33-regular-normal-sweet-pink-23px">
                   &gt;&gt; MINT RUN ED &lt;&lt;
@@ -1031,7 +1033,7 @@
               </div></a
             ><img class="balloon-zCUWHN" src="img/balloon-1@1x.png" />
           </div>
-          <div class="connect-button-dt0jg4 smart-layers-pointers connect_wallet_button" onClick="connectwallet()">
+          <div class="connect-button-dt0jg4 smart-layers-pointers connect_wallet_button" onClick="bundle.connectwallet()">
             <div class="connect_button-xJMyrN"></div>
             <div class="connect-xJMyrN basis33-regular-normal-white-26px">CONNECT</div>
           </div>
@@ -1126,15 +1128,15 @@
         <div class="section-6-ed-irl-U9Zo2Q">
           <div class="strip_6_ed_irl-iLI0fz"></div>
           <div class="ed_irl_text-iLI0fz">
-            <div class="ed-balloonfounder-Xging0 basis33-regular-normal-black-36px cursor_change" onClick="edballoon()">ED BALLOON<br />FOUNDER</div>
+            <div class="ed-balloonfounder-Xging0 basis33-regular-normal-black-36px cursor_change" onClick="bundle.edballoon()">ED BALLOON<br />FOUNDER</div>
             <div class="ed-balloon-is-an-act-Xging0 courier-normal-black-16px">
               <span class="span0-eQWMaM courier-regular-normal-black-16px"
                 >Ed Balloon is an active web3 artist, musician, and community leader.<br /><br />See Ed’s </span
-              ><span class="span1-eQWMaM courier-bold-black-16px cursor_change" onClick="art()">Art</span
+              ><span class="span1-eQWMaM courier-bold-black-16px cursor_change" onClick="bundle.art()">Art</span
               ><span class="span2-eQWMaM courier-regular-normal-black-16px">.<br />Watch Ed </span
-              ><span class="span3-eQWMaM courier-bold-black-16px cursor_change" onClick="perform()">Perform</span
+              ><span class="span3-eQWMaM courier-bold-black-16px cursor_change" onClick="bundle.perform()">Perform</span
               ><span class="span4-eQWMaM courier-regular-normal-black-16px">.<br /><br /></span
-              ><span class="span5-eQWMaM courier-regular-normal-black-12px cursor_change" onClick="olderelder">^photo: @OLDERELDER</span>
+              ><span class="span5-eQWMaM courier-regular-normal-black-12px cursor_change" onClick="bundle.olderelder">^photo: @OLDERELDER</span>
             </div>
           </div>
           <img class="ed-b_irl-iLI0fz" src="img/ed-b-irl-4@1x.png" />
@@ -1295,7 +1297,7 @@
 	 			</label>
 				</div>
 
-              <div class="mint-button-6OzVnx smart-layers-pointers" onClick="validate4()">
+              <div class="mint-button-6OzVnx smart-layers-pointers" onClick="bundle.validate4()">
                 <img class="mint_box-Cpv9cG" src="img/path-1-1@1x.png" />
                 <div class="mint-run-ed-Cpv9cG basis33-regular-normal-sweet-pink-23px">
                   &gt;&gt; MINT RUN ED &lt;&lt;
@@ -1345,7 +1347,7 @@
           ><a href="https://twitter.com/ed_balloon" target="_blank"
             ><img class="icon-twitter-Cup6NC" src="img/twitter-white-1@1x.png" />
           </a>
-          <div class="connect-button-Cup6NC smart-layers-pointers connect_wallet_button" onClick="connectwallet()">
+          <div class="connect-button-Cup6NC smart-layers-pointers connect_wallet_button" onClick="bundle.connectwallet()">
             <div class="connect_button-NCatth"></div>
             <div class="connect-NCatth basis33-regular-normal-white-26px">CONNECT</div>
           </div>

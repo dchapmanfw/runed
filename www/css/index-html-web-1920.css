@@ -6343,7 +6343,7 @@ display: none;
 }
 
 div.execute_mint_class {
-display: none;
+display: block;
 }
 
 /* The container */
