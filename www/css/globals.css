@@ -1,0 +1,111 @@
+@font-face {
+  font-family: "Courier-Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/Courier BOLD.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Courier-Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/courier_[allfont.net].ttf") format("truetype");
+}
+@font-face {
+  font-family: "basis33-Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/basis33.ttf") format("truetype");
+}
+@font-face {
+  font-family: "CourierNew-Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Courier New Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "CourierNew-Bold";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/cour.ttf") format("truetype");
+}
+
+/* The following line is used to measure usage of this code in production. For more info see our usage billing page */
+/* @import url("https://px.animaapp.com/62535bf2de13301f6a12d426.62535bf4752bb1d3b2bccd13.6XGwJpQ.hcp.png"); */
+
+.screen textarea:focus,
+.screen input:focus {
+  outline: none;
+}
+
+.screen * {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+.screen div {
+  -webkit-text-size-adjust: none;
+}
+
+.screen a {
+  display: contents;
+  text-decoration: none;
+}
+
+.container-center-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+}
+
+.container-center-horizontal > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+.overlay {
+  display: none;
+  height: 100%;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.overlay.animate-appear {
+  animation: reveal 0.3s ease-in-out 1 normal forwards;
+  display: block;
+  opacity: 0;
+}
+
+.overlay.animate-disappear {
+  animation: reveal 0.3s ease-in-out 1 reverse forwards;
+  display: block;
+  opacity: 1;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hidden,
+.hidden * {
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.smart-layers-pointers,
+.smart-layers-pointers * {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+* {
+  box-sizing: border-box;
+}
