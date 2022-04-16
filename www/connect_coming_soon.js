@@ -186,6 +186,5 @@ module.exports = {
   olderelder,
   edballoon,
   connectwallet,
-  execute,
 };
 
