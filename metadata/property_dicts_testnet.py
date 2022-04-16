@@ -1,4 +1,6 @@
 # 1 MetaData Reference
+NAME = "BuzzBee"
+FILE_TYPE  = "jpg"
 
 DAMN_IT = {
     "property_group": "Bee",

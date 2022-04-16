@@ -1,4 +1,6 @@
 # 1 MetaData Reference
+NAME = "Run Ed"
+FILE_TYPE = "mp4"
 
 DAMN_IT = {
     "property_group": "Damn it",

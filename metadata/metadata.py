@@ -1,5 +1,9 @@
 import property
 from property import Property
+
+# TESTNET
+# import property_dicts_testnet as property_dicts 
+# MAINNET
 import property_dicts
 import json
 
@@ -48,8 +52,8 @@ class Metadata:
                 raise "Invalid serial number selection in property"
             attribute_list.append(trait_dict)
         json_dict = {
-            "name": f"BuzzBee #{self.token_id_}",
-            "image": f"{self.html_}/{self.token_id_}.jpg",
+            "name": f"{property_dicts.NAME} #{self.token_id_}",
+            "image": f"{self.html_}/{self.token_id_}.{property_dicts.FILE_TYPE}",
             "attributes": attribute_list,
         }
         #json_object = json.dumps(json_dict, indent=4)
