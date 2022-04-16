@@ -1,0 +1,256 @@
+/* screen - meetedb-html-mobile-375 */
+
+.meetedb-html-mobile-375 {
+  background-color: var(--black-2);
+  cursor: pointer;
+  height: 812px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 375px;
+}
+
+.meetedb-html-mobile-375 .video-player-GqsorU {
+  background-color: transparent;
+  height: 325px;
+  left: 25px;
+  overflow: hidden;
+  position: absolute;
+  top: 244px;
+  width: 325px;
+}
+
+.meetedb-html-mobile-375 .escape-GqsorU {
+  background-color: transparent;
+  cursor: pointer;
+  height: 23px;
+  left: 324px;
+  position: absolute;
+  top: 210px;
+  width: 26px;
+}
+
+.meetedb-html-mobile-375 .line-1-fHGmdF {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: -1px;
+  width: calc(100.00% + 1px);
+}
+
+.meetedb-html-mobile-375 .line-2-fHGmdF {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: -1px;
+  width: calc(100.00% + 1px);
+}
+/* screen - meetedb-html-tablet-768 */
+
+.meetedb-html-tablet-768 {
+  background-color: var(--black-2);
+  cursor: pointer;
+  height: 1024px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 768px;
+}
+
+.meetedb-html-tablet-768 .video-player-xYDQXr {
+  background-color: transparent;
+  height: 490px;
+  left: 139px;
+  overflow: hidden;
+  position: absolute;
+  top: 267px;
+  width: 490px;
+}
+
+.meetedb-html-tablet-768 .escape-xYDQXr {
+  background-color: transparent;
+  cursor: pointer;
+  height: 23px;
+  left: 639px;
+  position: absolute;
+  top: 267px;
+  width: 26px;
+}
+
+.meetedb-html-tablet-768 .line-1-pM6Ydx {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: -1px;
+  width: calc(100.00% + 1px);
+}
+
+.meetedb-html-tablet-768 .line-2-pM6Ydx {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: -1px;
+  width: calc(100.00% + 1px);
+}
+/* screen - meetedb-html-web-1366 */
+
+.meetedb-html-web-1366 {
+  background-color: var(--black-2);
+  cursor: pointer;
+  height: 768px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 1366px;
+}
+
+.meetedb-html-web-1366 .video-player-uOTn3J {
+  background-color: transparent;
+  height: 490px;
+  left: 438px;
+  overflow: hidden;
+  position: absolute;
+  top: 139px;
+  width: 490px;
+}
+
+.meetedb-html-web-1366 .escape-uOTn3J {
+  background-color: transparent;
+  cursor: pointer;
+  height: 23px;
+  left: 945px;
+  position: absolute;
+  top: 142px;
+  width: 26px;
+}
+
+.meetedb-html-web-1366 .line-1-Ex4fIx {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: -1px;
+  width: calc(100.00% + 1px);
+}
+
+.meetedb-html-web-1366 .line-2-Ex4fIx {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: -1px;
+  width: calc(100.00% + 1px);
+}
+/* screen - meetedb-html-web-1920 */
+
+.meetedb-html-web-1920 {
+  background-color: var(--black-2);
+  cursor: pointer;
+  height: 1080px;
+  overflow: hidden;
+  overflow-x: hidden;
+  position: relative;
+  width: 1920px;
+}
+
+#overlay-meetedb-html-web-1920 {
+  background-color: var(--black-2);
+}
+
+.overlay .meetedb-html-web-1920 {
+  background-color: #00000000;
+}
+
+.meetedb-html-web-1920 .video-player-jXJtdj {
+  background-color: transparent;
+  height: 801px;
+  left: 560px;
+  overflow: hidden;
+  position: absolute;
+  top: 140px;
+  width: 801px;
+}
+
+.meetedb-html-web-1920 .escape-jXJtdj {
+  background-color: transparent;
+  cursor: pointer;
+  height: 23px;
+  left: 1380px;
+  position: absolute;
+  top: 142px;
+  width: 26px;
+}
+
+.meetedb-html-web-1920 .line-1-F5RMRC {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: -1px;
+  width: calc(100.00% + 1px);
+}
+
+.meetedb-html-web-1920 .line-2-F5RMRC {
+  background-color: transparent;
+  height: calc(100.00% + 1px);
+  left: -1px;
+  object-fit: cover;
+  position: absolute;
+  top: -1px;
+  width: calc(100.00% + 1px);
+}
+@media screen and (max-width: 767px) {
+  .screen.meetedb-html-web-1920 { 
+    display: none;
+   }
+  .screen.meetedb-html-web-1366 { 
+    display: none;
+   }
+  .screen.meetedb-html-tablet-768 { 
+    display: none;
+   }
+}
+@media screen and (min-width: 768px) and (max-width: 1365px) {
+  .screen.meetedb-html-web-1920 { 
+    display: none;
+   }
+  .screen.meetedb-html-web-1366 { 
+    display: none;
+   }
+  .screen.meetedb-html-mobile-375 { 
+    display: none;
+   }
+}
+@media screen and (min-width: 1366px) and (max-width: 1919px) {
+  .screen.meetedb-html-web-1920 { 
+    display: none;
+   }
+  .screen.meetedb-html-tablet-768 { 
+    display: none;
+   }
+  .screen.meetedb-html-mobile-375 { 
+    display: none;
+   }
+}
+@media screen and (min-width: 1920px) {
+  .screen.meetedb-html-web-1366 { 
+    display: none;
+   }
+  .screen.meetedb-html-tablet-768 { 
+    display: none;
+   }
+  .screen.meetedb-html-mobile-375 { 
+    display: none;
+   }
+}
