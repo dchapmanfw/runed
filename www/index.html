@@ -43,7 +43,7 @@
 	
 	
   <body style="margin: 0; background: #99e7e9">
-	  <!body onload="startApp()">
+	  <!body onload="change_text_number_nfts()">
     <input type="hidden" id="anPageName" name="page" value="index-html-web-1920" />
     <div class="container-center-horizontal">
       <form class="index-html-web-1920 screen" name="form2" action="form2" method="post">
@@ -285,8 +285,8 @@
                 Ed. Run Ed. Run!</span
               >
             </div>
-            <div class="mint-price-012-ethqt-eeKRWD courier-regular-normal-black-15px">
-              MINT PRICE = 0.12 ETH<br />QTY NFTS = 5000<br />MAX PER WALLET = 3<br />
+            <div class="mint-price-012-ethqt-eeKRWD courier-regular-normal-black-15px" id="nfts_sold_1920">
+              MINT PRICE = 0.12 ETH<br />QTY NFTS = <script>document.write(bundle.number_nfts_sold());</script><br />MAX PER WALLET = 3<br />
             </div>
             <!a href="javascript:SubmitForm('form2')">
 			  
@@ -327,7 +327,7 @@
               >
             </div>
             <div class="mint-price-012-ethqt-KVcfPR courier-regular-normal-black-15px">
-              MINT PRICE = 0.12 ETH<br />QTY NFTS = 5000<br />DROP DATE = APRIL 2022<br />
+              MINT PRICE = 0.12 ETH<br />QTY NFTS = <script>document.write(bundle.number_nfts_sold());</script><br />DROP DATE = APRIL 2022<br />
             </div>
             <div class="minting-soon-KVcfPR basis33-regular-normal-black-23px">
               MINTING&nbsp;&nbsp;&nbsp;&nbsp; SOON !!
@@ -367,6 +367,8 @@
             </div></a
           ><img class="balloon-zi4xx4" src="img/balloon-1@1x.png" />
         </div>
+		  
+		  
         <div class="menu-buttons-TEYHDu">
           <div class="connect-button-pBVC12 smart-layers-pointers connect_wallet_button" onClick="bundle.connectwallet()">
             <div class="connect_button-rolQ7s"></div>
@@ -377,7 +379,21 @@
           ><a href="https://twitter.com/ed_balloon" target="_blank"
             ><img class="icon-twitter-pBVC12" src="img/twitter@1x.png" />
           </a>
+			<div class="presale_alert_button-pBVC12 smart-layers-pointers presale_alert_button_class" onClick="bundle.presale_click()">
+            <div class="presale_mint_box-XFgbL5"></div>
+            <div class="presale-mint-XFgbL5 basis33-regular-normal-mine-shaft-26px">PRESALE MINT</div>
+          </div>
+          <div class="public_alert_button-pBVC12 smart-layers-pointers public_alert_button_class" onClick="bundle.publicmint_click()">
+            <div class="public_mint_box-mC0lBP"></div>
+            <div class="public-mint-mC0lBP basis33-regular-normal-mine-shaft-26px">PUBLIC MINT</div>
+          </div>
+          <div class="coming_alert_button-pBVC12 smart-layers-pointers coming_alert_button_class" onClick="bundle.comingsoon_click()">
+            <div class="coming_mint_box-jrwPU9"></div>
+            <div class="minting-soon-jrwPU9 basis33-regular-normal-mine-shaft-26px">MINTING SOON</div>
+          </div>
         </div>
+		  
+		  
       </form>
     </div>
     <div class="container-center-horizontal">
@@ -621,7 +637,7 @@
               >
             </div>
             <div class="mint-price-012-ethqt-CCzriY courier-regular-normal-black-15px">
-              MINT PRICE = 0.12 ETH<br />QTY NFTS = 5000<br />MAX PER WALLET = 3<br />
+              MINT PRICE = 0.12 ETH<br />QTY NFTS = <script>document.write(bundle.number_nfts_sold());</script><br />MAX PER WALLET = 3<br />
             </div>
             <!a href="javascript:SubmitForm('form4')">
 			  <div>
@@ -658,7 +674,7 @@
               >
             </div>
             <div class="mint-price-012-ethqt-VcIHSY courier-regular-normal-black-15px">
-              MINT PRICE = 0.12 ETH<br />QTY NFTS = 5000<br />DROP DATE = APRIL 2022<br />
+              MINT PRICE = 0.12 ETH<br />QTY NFTS = <script>document.write(bundle.number_nfts_sold());</script><br />DROP DATE = APRIL 2022<br />
             </div>
             <div class="minting-soon-VcIHSY basis33-regular-normal-black-23px">
               MINTING&nbsp;&nbsp;&nbsp;&nbsp; SOON !!
@@ -698,6 +714,8 @@
             </div></a
           ><img class="balloon-GyxwzY" src="img/balloon-1@1x.png" />
         </div>
+		  
+		  
         <div class="menu-buttons-Ij4xXV">
           <div class="connect-button-dE5s0o smart-layers-pointers connect_wallet_button" onClick="bundle.connectwallet()">
             <div class="connect_button-xJ5sRL"></div>
@@ -708,7 +726,22 @@
           ><a href="https://twitter.com/ed_balloon" target="_blank"
             ><img class="icon-twitter-dE5s0o" src="img/twitter@1x.png" />
           </a>
+			<div class="presale_alert_button-dE5s0o smart-layers-pointers presale_alert_button_class" onClick="bundle.presale_click()">
+            <div class="presale_mint_box-zms2xb"></div>
+            <div class="presale-mint-zms2xb basis33-regular-normal-mine-shaft-26px">PRESALE MINT</div>
+          </div>
+          <div class="public_alert_button-dE5s0o smart-layers-pointers public_alert_button_class" onClick="bundle.publicmint_click()">
+            <div class="public_mint_box-Fx63na"></div>
+            <div class="public-mint-Fx63na basis33-regular-normal-mine-shaft-26px">PUBLIC MINT</div>
+          </div>
+          <div class="coming_alert_button-dE5s0o smart-layers-pointers coming_alert_button_class" onClick="bundle.comingsoon_click()">
+            <div class="coming_mint_box-e0FgJB"></div>
+            <div class="minting-soon-e0FgJB basis33-regular-normal-mine-shaft-26px">MINTING SOON</div>
+          </div>
+			
         </div>
+		  
+		  
       </form>
     </div>
     <div class="container-center-horizontal">
@@ -954,7 +987,7 @@
               >
             </div>
             <div class="mint-price-012-ethqt-hUB9xh courier-regular-normal-black-15px">
-              MINT PRICE = 0.12 ETH<br />QTY NFTS = 5000<br />MAX PER WALLET = 3<br />
+              MINT PRICE = 0.12 ETH<br />QTY NFTS = <script>document.write(bundle.number_nfts_sold());</script><br />MAX PER WALLET = 3<br />
             </div>
             <!a href="javascript:SubmitForm('form6')">
 			  <div>
@@ -991,7 +1024,7 @@
               >
             </div>
             <div class="mint-price-012-ethqt-cIvZ8M courier-regular-normal-black-15px">
-              MINT PRICE = 0.12 ETH<br />QTY NFTS = 5000<br />DROP DATE = APRIL 2022<br />
+              MINT PRICE = 0.12 ETH<br />QTY NFTS = <script>document.write(bundle.number_nfts_sold());</script><br />DROP DATE = APRIL 2022<br />
             </div>
             <div class="minting-soon-cIvZ8M basis33-regular-normal-black-23px">
               MINTING&nbsp;&nbsp;&nbsp;&nbsp; SOON !!
@@ -1043,6 +1076,18 @@
         ><a href="https://twitter.com/ed_balloon" target="_blank"
           ><img class="icon-twitter-bW58j5" src="img/twitter-white@1x.png" />
         </a>
+		  <div class="presale_alert_button-bW58j5 smart-layers-pointers presale_alert_button_class" onClick="bundle.presale_click()">
+          <div class="presale_mint_box-1ppP8C"></div>
+          <div class="presale-mint-1ppP8C basis33-regular-normal-mine-shaft-26px">PRESALE MINT</div>
+        </div>
+        <div class="public_alert_button-bW58j5 smart-layers-pointers public_alert_button_class" onClick="bundle.publicmint_click()">
+          <div class="public_mint_box-toTnqN"></div>
+          <div class="public-mint-toTnqN basis33-regular-normal-mine-shaft-26px">PUBLIC MINT</div>
+        </div>
+        <div class="coming_alert_button-bW58j5 smart-layers-pointers coming_alert_button_class" onClick="bundle.comingsoon_click()">
+          <div class="coming_mint_box-hfl4ma"></div>
+          <div class="minting-soon-hfl4ma basis33-regular-normal-mine-shaft-26px">MINTING SOON</div>
+        </div>
       </form>
     </div>
 	  
@@ -1287,7 +1332,7 @@
               >
             </div>
             <div class="mint-price-012-ethqt-6OzVnx courier-regular-normal-black-15px">
-              MINT PRICE = 0.12 ETH<br />QTY NFTS = 5000<br />MAX PER WALLET = 3<br />
+              MINT PRICE = 0.12 ETH<br />QTY NFTS = <script>document.write(bundle.number_nfts_sold());</script><br />MAX PER WALLET = 3<br />
             </div>
             
 				<div>
@@ -1324,7 +1369,7 @@
               >
             </div>
             <div class="mint-price-012-ethqt-ExFPRa courier-regular-normal-black-15px">
-              MINT PRICE = 0.12 ETH<br />QTY NFTS = 5000<br />DROP DATE = APRIL 2022<br />
+              MINT PRICE = 0.12 ETH<br />QTY NFTS = <script>document.write(bundle.number_nfts_sold());</script><br />DROP DATE = APRIL 2022<br />
             </div>
             <div class="minting-soon-ExFPRa basis33-regular-normal-black-23px">
               MINTING&nbsp;&nbsp;&nbsp;&nbsp; SOON !!
@@ -1350,6 +1395,18 @@
           <div class="connect-button-Cup6NC smart-layers-pointers connect_wallet_button" onClick="bundle.connectwallet()">
             <div class="connect_button-NCatth"></div>
             <div class="connect-NCatth basis33-regular-normal-white-26px">CONNECT</div>
+          </div>
+			<div class="presale_alert_button-Cup6NC smart-layers-pointers presale_alert_button_class" onClick="bundle.presale_click()">
+            <div class="presale_mint_box-PBlHZZ"></div>
+            <div class="presale-mint-PBlHZZ basis33-regular-normal-mine-shaft-26px">PRESALE MINT</div>
+          </div>
+          <div class="public_alert_button-Cup6NC smart-layers-pointers public_alert_button_class" onClick="bundle.publicmint_click()">
+            <div class="public_mint_box-EAoiPy"></div>
+            <div class="public-mint-EAoiPy basis33-regular-normal-mine-shaft-26px">PUBLIC MINT</div>
+          </div>
+          <div class="coming_alert_button-Cup6NC smart-layers-pointers coming_alert_button_class" onClick="bundle.comingsoon_click()">
+            <div class="coming_mint_box-W10sFZ"></div>
+            <div class="minting-soon-W10sFZ basis33-regular-normal-mine-shaft-26px">MINTING SOON</div>
           </div>
         </div>
       </form>
