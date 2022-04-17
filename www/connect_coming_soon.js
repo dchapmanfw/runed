@@ -2,6 +2,8 @@
 
 const { ethers } = require("ethers");
 
+
+
 async function connectwallet() {
 	
 	$("div.connect_wallet_button").fadeOut(500);
