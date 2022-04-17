@@ -3,6 +3,7 @@
 
 const { ethers } = require("ethers");
 
+
 // TODO : this becomes a environment variable
 var abi = [
     {
@@ -781,7 +782,14 @@ var abi = [
   var number_of_nfts
   // TODO : this becomes a environment variable before mainnet
   var contract_address = "0x770a0CDe70bA999C20ce19471f45dfB64df67474";
-  var key = 12345
+  var key = 12345;
+
+const ComingSoon = Symbol("coming_soon")
+const Waitlist = Symbol("waitlist")
+const Public = Symbol("public")
+
+let project_phase = Public;
+
 
 async function execute_mint() {
     if (typeof window.ethereum !== "undefined") {
@@ -792,20 +800,41 @@ async function execute_mint() {
             var mint_value = (number_of_nfts * .12).toString();
             console.log(mint_value);
             console.log(ethers.utils.parseEther(mint_value).toString());
-            await contract.publicSaleMint(number_of_nfts, key, {value : ethers.utils.parseEther(mint_value).toString()});
-            alert(`yo you minted ${number_of_nfts} NFBs`);
+            if (project_phase == Waitlist){
+              success = await contract.allowlistMint({value : ethers.utils.parseEther(mint_value).toString()}).then((result) => {
+                console.log(result["data"]["message"]);
+                return true;
+              }, (error) => {
+                  console.log(error["data"]["message"]);
+                  alert(error["data"]["message"]);
+                  return false
+              });
+            } else if (project_phase == Public) {
+            success =  await contract.publicSaleMint(number_of_nfts, key, {value : ethers.utils.parseEther(mint_value).toString()}).then((result) => {
+                console.log(result["data"]["message"]);
+                return true;
+              }, (error) => {
+                console.log(error["data"]["message"]);
+                alert(error["data"]["message"]);
+                return false
+              });
+            } else {
+              alert("Not minting yet!");
+            }
+            if(success){
+              alert(`Thanks For Helping Ed Get To His Audition!`);
+            }
         } catch (error) {
             console.log(error);
         }
     } else {
-    document.getElementById("executeButton").innerHTML =
-        "Please install MetaMask";
+      alert("Please install MetaMask");
+      $("div.connect_wallet_button").fadeIn(2000);
     }
 }
 
 
 async function connectwallet() {
-	
 	$("div.connect_wallet_button").fadeOut(500);
 	
   if (typeof window.ethereum !== "undefined") {
@@ -813,16 +842,31 @@ async function connectwallet() {
       await ethereum.request({ method: "eth_requestAccounts" });
     } catch (error) {
       console.log(error);
-	 $("div.connect_wallet_button").fadeIn(2000);
+	    $("div.connect_wallet_button").fadeIn(2000);
     }
-	$("div.execute_mint_class").fadeIn(2000);
-	$("div.presale_alert_button_class").show;
-	$("div.presale_alert_button_class").fadeTo(2000, 1.0)
+  switch (project_phase) {
+    case ComingSoon:
+      $("div.coming_soon_class").fadeIn(2000);
+      $("div.coming_alert_button_class").show;
+      $("div.coming_alert_button_class").fadeTo(2000, 1.0);
+      break;
+    case Waitlist:
+      $("div.execute_mint_class").fadeIn(2000);
+      $("div.presale_alert_button_class").show;
+      $("div.presale_alert_button_class").fadeTo(2000, 1.0);
+      break;
+    case Public:
+      $("div.execute_mint_class").fadeIn(2000);
+      $("div.public_alert_button_class").show;
+      $("div.public_alert_button_class").fadeTo(2000, 1.0);
+      break;
+    default:
+    alert("something went wrong");
+  }
+
     const accounts = await ethereum.request({ method: "eth_accounts" });
     console.log(accounts);
-	  
   } else {
-    
      alert("Please install MetaMask");
 	 $("div.connect_wallet_button").fadeIn(2000);
   }
