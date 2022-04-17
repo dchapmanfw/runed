@@ -1,16 +1,19 @@
 {
   "dependencies": {
     "browserify": "^17.0.0",
+    "dotenv": "^16.0.0",
     "ethers": "^5.6.4",
+    "fs": "^0.0.1-security",
     "watchify": "^4.0.0",
     "web3": "^1.7.3"
   },
   "scripts": {
-    "build": "browserify index.js --standalone bundle -o ./dist/bundle.js",
-    "watch": "watchify index.js --standalone bundle -o ./dist/bundle.js -v"
+    "build": "browserify connect_execute_mint.js --standalone bundle -o ./dist/bundle.js",
+    "watch": "watchify connect_execute_mint.js --standalone bundle -o ./dist/bundle.js -v"
   },
   "devDependencies": {
     "babelify": "^10.0.0",
+    "dotenv": "10.0.0",
     "http-server": "^14.1.0"
   }
 }
