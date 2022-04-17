@@ -2,7 +2,7 @@
   font-family: "Courier-Bold";
   font-style: normal;
   font-weight: 700;
-  src: url("../fonts/Courier BOLD.ttf") format("truetype");
+  src: url("../fonts/Courier-BoldRegular.ttf") format("truetype");
 }
 @font-face {
   font-family: "Courier-Regular";
@@ -30,7 +30,7 @@
 }
 
 /* The following line is used to measure usage of this code in production. For more info see our usage billing page */
-/* @import url("https://px.animaapp.com/62535bf2de13301f6a12d426.62535bf4752bb1d3b2bccd13.6XGwJpQ.hcp.png"); */
+/* @import url("https://px.animaapp.com/62535bf2de13301f6a12d426.62535bf4752bb1d3b2bccd13.6XGwJpQ.hcp.png");  */
 
 .screen textarea:focus,
 .screen input:focus {

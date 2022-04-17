@@ -816,6 +816,8 @@ async function connectwallet() {
 	 $("div.connect_wallet_button").fadeIn(2000);
     }
 	$("div.execute_mint_class").fadeIn(2000);
+	$("div.presale_alert_button_class").show;
+	$("div.presale_alert_button_class").fadeTo(2000, 1.0)
     const accounts = await ethereum.request({ method: "eth_accounts" });
     console.log(accounts);
 	  
@@ -854,14 +856,6 @@ function edballoon(){
 }
 
 
-// this function hides the execute box and reveals the connect button when the wallet is disconected.
-
-function disconectwallet(){
-	
-	$("div.coming_soon_class").fadeOut(2000);
-	$("div.connect_wallet_button").fadeIn(2000);
-	
-}
 
 	// confirms the user has checked the check box
 
@@ -905,8 +899,6 @@ async function validate4() {
         }
     }
 
-	// would be cool if var number_of_nfts could be sent back to front end value quantity
-
 
 
 
@@ -936,8 +928,47 @@ String.prototype.getDecimals || (String.prototype.getDecimals = function() {
 });
 
 
+
+
+
+
+// NEW JS FUNCTIONS FROM DAVE YAY!! //
+
+
+function publicmint_click(){
+	
+	alert("Minting available to the public! Max of 3 NFTs per wallet. Please join our Discord for project updates :)")
+	
+}
+
+function presale_click(){
+	
+	alert("Currently minting Run Ed for users on the Presale List. Public minting will be availble soon. Please join our Discord for project updates :)")
+	
+}
+
+function comingsoon_click(){
+	
+	alert("Presale Mint goes live at the end of April! Join our Discord for project updates :)")
+	
+}
+
+
+// ON LOAD (OR OTHER ACTION) QUERY THE CONTRACT TO FIGURE OUT THE TOTAL NUMBER OF NFTS SOLD //
+
+function number_nfts_sold(){
+	
+	var mint_value=666;
+	return mint_value.toString() + "/5000";
+	
+}
+
 module.exports = {
 art,
+publicmint_click,
+presale_click,
+comingsoon_click,
+number_nfts_sold,
 perform,
 olderelder,
 edballoon,
