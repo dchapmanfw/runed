@@ -100,8 +100,8 @@ FLAT_FOREGROUND_OBJ = {
     "property": (
         "Balloon",
         "TRex",
-        "Night",
-        "Day",
+        "Bird",
+        "Bird",
     ),
 }
 PLANET = {
@@ -110,8 +110,8 @@ PLANET = {
     "shift": 38,
     "number": 1,
     "property": (
-        "Moon",
-        "Sun",
+        "Chill Moon",
+        "Frightened Sun",
     ),
 }
 WEATHER = {
