@@ -21,6 +21,7 @@ class Metadata:
         Property(property_dicts.FOREGROUND_OBJ),
         Property(property_dicts.ROAD),
         Property(property_dicts.GROUND),
+        Property(property_dicts.COLOR),
     )
 
     def __init__(self, serial_number,serial_number_two,serial_number_three, html="test.gov", token_id="1"):
