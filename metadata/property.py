@@ -20,7 +20,10 @@ class Property:
 
     def get_property_group(self):
         return self.property_dict_["property_group"]
-    
+
+    def get_property(self):
+        return self.property_dict_["property"]
+
     def get_property_number(self):
         return self.property_dict_["number"]
 

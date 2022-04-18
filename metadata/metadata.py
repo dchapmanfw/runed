@@ -24,14 +24,24 @@ class Metadata:
         Property(property_dicts.COLOR),
     )
 
-    def __init__(self, serial_number,serial_number_two,serial_number_three, html="test.gov", token_id="1"):
+    def __init__(
+        self,
+        serial_number,
+        serial_number_two,
+        serial_number_three,
+        html="test.gov",
+        token_id="1",
+    ):
         self.serial_number_ = serial_number
         self.serial_number_two_ = serial_number_two
         self.serial_number_three_ = serial_number_three
         self.html_ = html
         self.token_id_ = token_id
 
-    def generate_json(self):
+    def get_property_list(self):
+        return self.property_list_
+
+    def generate_json(self, test=False):
         attribute_list = list()
 
         for prop in self.property_list_:
@@ -58,26 +68,62 @@ class Metadata:
             "image": f"{self.html_}/{self.token_id_}.{property_dicts.TYPE}",
             "attributes": attribute_list,
         }
-        #json_object = json.dumps(json_dict, indent=4)
-        with open(f'{self.token_id_}', 'w') as f:
-            json.dump(json_dict, f,indent=4)
+        if not test:
+            # json_object = json.dumps(json_dict, indent=4)
+            with open(f"{self.token_id_}", "w") as f:
+                json.dump(json_dict, f, indent=4)
+        return json_dict
+
+
+def print_metadata_breakdown(master_list):
+    m = Metadata(0, 0, 0, "", 0)
+    property_list = m.get_property_list()
+
+    p_dict = {}
+    for property in property_list:
+        pg_dict = {}
+        for pg in property.get_property():
+            pg_dict[pg] = 0
+        p_dict[property.get_property_group()] = pg_dict
+
+    for nft in master_list:
+        for attribute in nft["attributes"]:
+            if attribute["value"] not in p_dict[attribute["trait_type"]]:
+                p_dict[attribute["trait_type"]]["None"] = 0
+            p_dict[attribute["trait_type"]][attribute["value"]] += 1
+
+    for key in p_dict:
+        print(key)
+        count = 0
+        for k in p_dict[key]:
+            print(f"\t{k} : {p_dict[key][k] / 50}")
+            count += p_dict[key][k]
 
 
 if __name__ == "__main__":
 
-    parser = argparse.ArgumentParser(description='Generate NFT metadata')
-    parser.add_argument('file', type=argparse.FileType('r'))
+    parser = argparse.ArgumentParser(description="Generate NFT metadata")
+    parser.add_argument("file", type=argparse.FileType("r"))
     args = parser.parse_args()
 
     json_file_count = 0
-    image_ipfs = 'https://ipfs.io/ipfs/QmQpVSAaggX9Cy1vFygjrtjq46DGFEivU8oY3G4Ci3H8q4'
+    image_ipfs = "https://ipfs.io/ipfs/QmQpVSAaggX9Cy1vFygjrtjq46DGFEivU8oY3G4Ci3H8q4"
+
+    master_list = list()
 
     for line in args.file.readlines():
-        splits = line.split('_')
+        splits = line.split("_")
         serial_number_3 = int(splits[0])
         serial_number_2 = int(splits[1])
-        serial_number_1 = int(splits[2].split('.')[0])
-        m = Metadata(serial_number_1,serial_number_2, serial_number_3, image_ipfs,json_file_count)
-        m.generate_json()
+        serial_number_1 = int(splits[2].split(".")[0])
+        m = Metadata(
+            serial_number_1,
+            serial_number_2,
+            serial_number_3,
+            image_ipfs,
+            json_file_count,
+        )
+        master_list.append(m.generate_json(True))
         json_file_count += 1
 
+    print_metadata_breakdown(master_list)

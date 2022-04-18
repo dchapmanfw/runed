@@ -179,11 +179,9 @@ GROUND = {
 
 # 2 Metadata Reference
 COLOR = {
-    "property_group": "Treatment",
+    "property_group": "Color Treatment",
     "bitmask": 0b1,
     "shift": 0,
     "number": 3,
-    "property": (
-        "Retro",
-    ),
+    "property": ("Retro",),
 }
