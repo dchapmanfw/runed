@@ -100,8 +100,8 @@ FLAT_FOREGROUND_OBJ = {
     "property": (
         "Balloon",
         "TRex",
-        "Night",
-        "Day",
+        "Bird",
+        "Bird",
     ),
 }
 PLANET = {
@@ -110,8 +110,8 @@ PLANET = {
     "shift": 38,
     "number": 1,
     "property": (
-        "Moon",
-        "Sun",
+        "Chill Moon",
+        "Frightened Sun",
     ),
 }
 WEATHER = {
@@ -179,11 +179,9 @@ GROUND = {
 
 # 2 Metadata Reference
 COLOR = {
-    "property_group": "Treatment",
+    "property_group": "Color Treatment",
     "bitmask": 0b1,
     "shift": 0,
     "number": 3,
-    "property": (
-        "Retro",
-    ),
+    "property": ("Retro",),
 }
