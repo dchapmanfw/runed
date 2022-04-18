@@ -100,36 +100,48 @@ contract('RunEd: test base logic of contract', (accounts) => {
     });
 
     it('is not possible to do allow mint without being on waitlist', async () => {
-        const key = 12345;
         let timesalestart = Math.round(Date.now() / 1000);
         let token = await RunEd.deployed();
         // waitlist not set up yet (fails either because not on allow list OR not eligable for mint)
-        await truffleAssert.fails(token.allowlistMint( { from: tokenHolderThreeAddress,
+        await truffleAssert.fails(token.allowlistMint(1, { from: tokenHolderFourAddress,
             value: web3.utils.toWei('.36', 'ether')}));
         // set allow list price
-        await truffleAssert.passes(token.setPublicSaleKey(key, { from: deployerAddress }));
         await truffleAssert.passes(token.setupSaleInfo(web3.utils.toWei('.12', 'ether'),web3.utils.toWei('.12', 'ether'),timesalestart, { from: deployerAddress }));
         await new Promise((res) => {
             setTimeout(res, 1000);
         });
         // not on allow list
-        await truffleAssert.fails(token.allowlistMint( { from: tokenHolderThreeAddress,
+        await truffleAssert.fails(token.allowlistMint(1, { from: tokenHolderFourAddress,
             value: web3.utils.toWei('.36', 'ether')}),"VM Exception while processing transaction","not eligible for allowlist mint" );
         
         // seed the allow list
         let allow_list_addresses = [tokenHolderFourAddress, tokenHolderFiveAddress, tokenHolderSixAddress]
         let allow_list_amounts = [3, 3, 3]
         await truffleAssert.passes(token.seedAllowlist(allow_list_addresses,allow_list_amounts,{ from: deployerAddress }));
-        // should be able to mint 3
-        await truffleAssert.passes(token.allowlistMint( { from: tokenHolderFourAddress,
+        // mints 1
+        await truffleAssert.passes(token.allowlistMint(1, { from: tokenHolderFourAddress,
             value: web3.utils.toWei('.12', 'ether')}));
-        await truffleAssert.passes(token.allowlistMint( { from: tokenHolderFourAddress,
+        // another 1
+        await truffleAssert.passes(token.allowlistMint(1, { from: tokenHolderFourAddress,
             value: web3.utils.toWei('.12', 'ether')}));
-        await truffleAssert.passes(token.allowlistMint( { from: tokenHolderFourAddress,
+        // can't do 2 more
+        await truffleAssert.fails(token.allowlistMint(2, { from: tokenHolderFourAddress,
+            value: web3.utils.toWei('.24', 'ether')}),"VM Exception while processing transaction", "minting quantity exceeded max per wallet");
+        // another 1
+        await truffleAssert.passes(token.allowlistMint(1, { from: tokenHolderFourAddress,
+            value: web3.utils.toWei('.12', 'ether')}));
+        // should be able to mint 2
+        await truffleAssert.passes(token.allowlistMint(2, { from: tokenHolderFiveAddress,
+            value: web3.utils.toWei('.24', 'ether')}));
+        // and one more
+        await truffleAssert.passes(token.allowlistMint(1, { from: tokenHolderFiveAddress,
             value: web3.utils.toWei('.12', 'ether')}));
         // should not be able to mint 4
-        await truffleAssert.fails(token.allowlistMint( { from: tokenHolderFourAddress,
-            value: web3.utils.toWei('.12', 'ether')}),"VM Exception while processing transaction","not eligible for allowlist mint" );
+        await truffleAssert.fails(token.allowlistMint(4, { from: tokenHolderSixAddress,
+            value: web3.utils.toWei('.48', 'ether')}),"VM Exception while processing transaction", "minting quantity exceeded max per wallet");
+        // should be able to mint 3
+        await truffleAssert.passes(token.allowlistMint(3, { from: tokenHolderSixAddress,
+            value: web3.utils.toWei('.36', 'ether')}));
         
     });
 

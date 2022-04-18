@@ -1,4 +1,6 @@
 # 1 MetaData Reference
+NAME = "Run Ed"
+TYPE = "mp4"
 
 DAMN_IT = {
     "property_group": "Damn it",
@@ -172,5 +174,16 @@ GROUND = {
         "Desert",
         "Purple Rock",
         "Football Field",
+    ),
+}
+
+# 2 Metadata Reference
+COLOR = {
+    "property_group": "Treatment",
+    "bitmask": 0b1,
+    "shift": 0,
+    "number": 3,
+    "property": (
+        "Retro",
     ),
 }
