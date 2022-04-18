@@ -78,14 +78,16 @@ contract RunEd is Ownable, ERC721A, ReentrancyGuard {
     _;
   }
 
-  function allowlistMint() external payable callerIsUser {
+  function allowlistMint(uint256 quantity) external payable callerIsUser {
     uint256 price = uint256(saleConfig.mintlistPrice);
     require(price != 0, "allowlist sale has not begun yet");
     require(allowlist[msg.sender] > 0, "not eligible for allowlist mint");
-    require(totalSupply() + 1 <= collectionSize, "reached max supply");
-    allowlist[msg.sender]--;
-    _safeMint(msg.sender, 1);
-    refundIfOver(price);
+    require(totalSupply() + quantity <= collectionSize, "reached max supply");
+    require(allowlist[msg.sender] >= quantity, "minting quantity exceeded max per wallet");
+    require(numberMinted(msg.sender) + quantity <= maxPerAddressDuringMint,"can not mint this many");
+    allowlist[msg.sender]-= quantity;
+    _safeMint(msg.sender, quantity);
+    refundIfOver(price * quantity);
   }
 
   function publicSaleMint(uint256 quantity, uint256 callerPublicSaleKey)
