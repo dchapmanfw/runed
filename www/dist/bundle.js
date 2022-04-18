@@ -802,7 +802,7 @@ async function execute_mint() {
             console.log(mint_value);
             console.log(ethers.utils.parseEther(mint_value).toString());
             if (project_phase == Waitlist){
-              success = await contract.allowlistMint({value : ethers.utils.parseEther(mint_value).toString()}).then((result) => {
+              success = await contract.allowlistMint(number_of_nfts,{value : ethers.utils.parseEther(mint_value).toString()}).then((result) => {
                 console.log(result["data"]["message"]);
                 return true;
               }, (error) => {

@@ -1,6 +1,6 @@
 import argparse
 from property import Property
-import property_dicts_testnet as property_dicts
+import property_dicts as property_dicts
 import json
 
 
