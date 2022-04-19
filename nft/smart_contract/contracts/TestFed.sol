@@ -35,7 +35,7 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 //                     ;%@@@@%%:;;;.                        //
 //                 ...;%@@@@@%%:;;;;,..                     //
 //////////////////////////////////////////////////////////////
-contract LoveMyNFBs is Ownable, ERC721A, ReentrancyGuard {
+contract LoveMyNBAJams is Ownable, ERC721A, ReentrancyGuard {
   uint256 public immutable maxPerAddressDuringMint;
   uint256 public immutable amountForDevs;
 
@@ -54,7 +54,7 @@ contract LoveMyNFBs is Ownable, ERC721A, ReentrancyGuard {
     uint256 maxBatchSize_,
     uint256 collectionSize_,
     uint256 amountForDevs_
-  ) ERC721A("LoveMyNFTrees", "LvNFTrees", maxBatchSize_, collectionSize_) {
+  ) ERC721A("LoveMyNBAJams", "LoveMyNBAJams", maxBatchSize_, collectionSize_) {
     maxPerAddressDuringMint = maxBatchSize_;
     amountForDevs = amountForDevs_;
     require(

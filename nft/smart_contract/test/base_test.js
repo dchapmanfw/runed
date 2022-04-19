@@ -1,4 +1,6 @@
 const RunEd = artifacts.require('RunEd');
+//const RunEd = artifacts.require('LoveMyNBAJams');
+
 const truffleAssert = require('truffle-assertions');
 
 contract('RunEd: test base logic of contract', (accounts) => {

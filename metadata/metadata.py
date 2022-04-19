@@ -31,12 +31,14 @@ class Metadata:
         serial_number_three,
         html="test.gov",
         token_id="1",
+        file_name = "",
     ):
         self.serial_number_ = serial_number
         self.serial_number_two_ = serial_number_two
         self.serial_number_three_ = serial_number_three
         self.html_ = html
         self.token_id_ = token_id
+        self.file_name_ = file_name
 
     def get_property_list(self):
         return self.property_list_
@@ -65,7 +67,7 @@ class Metadata:
             attribute_list.append(trait_dict)
         json_dict = {
             "name": f"{property_dicts.NAME} #{self.token_id_}",
-            "image": f"{self.html_}/{self.token_id_}.{property_dicts.TYPE}",
+            "image": f"{self.html_}/{self.file_name_}",
             "attributes": attribute_list,
         }
         if not test:
@@ -107,7 +109,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     json_file_count = 0
-    image_ipfs = "https://ipfs.io/ipfs/QmQpVSAaggX9Cy1vFygjrtjq46DGFEivU8oY3G4Ci3H8q4"
+    image_ipfs = "https://arweave.net/ahlV0avN05uzx7eFnZo25mepNOmALTKIBeAXhUwBBX0"
 
     master_list = list()
 
@@ -122,8 +124,10 @@ if __name__ == "__main__":
             serial_number_3,
             image_ipfs,
             json_file_count,
+            # TODO[dchapman] : make sure that the final has no \nm
+            line.split("\n")[0],
         )
-        master_list.append(m.generate_json(True))
+        master_list.append(m.generate_json(False))
         json_file_count += 1
 
     print_metadata_breakdown(master_list)
