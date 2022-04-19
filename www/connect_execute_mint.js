@@ -781,7 +781,7 @@ var abi = [
 
   var number_of_nfts
   // TODO : this becomes a environment variable before mainnet
-  var contract_address = "0xDb6cA6b068cdd2A74aE7842ca90e77b27d8899A2";
+  var contract_address = "0x8b154134ab7d767c51ffb7a0db92f923c7fbf2f0";
   var key = 12345;
 
 const ComingSoon = Symbol("coming_soon")
@@ -805,8 +805,7 @@ async function execute_mint() {
                 console.log(result["data"]["message"]);
                 return true;
               }, (error) => {
-                  console.log(error["data"]["message"]);
-                  alert(error["data"]["message"]);
+                  alert(error["error"]["message"]);
                   return false
               });
             } else if (project_phase == Public) {
@@ -814,8 +813,7 @@ async function execute_mint() {
                 console.log(result["data"]["message"]);
                 return true;
               }, (error) => {
-                console.log(error["data"]["message"]);
-                alert(error["data"]["message"]);
+                alert(error["error"]["message"]);
                 return false
               });
             } else {
