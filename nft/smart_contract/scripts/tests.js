@@ -10,7 +10,7 @@ LoveMyNBAJams.deployed().then(function(instance){return instance.withdrawMoney()
 LoveMyNFBs.deployed().then(function(instance){return instance.setBaseURI('https://ipfs.io/ipfs/QmazjyJABJFNXftH9eM4wmLqrW47qvsxBxBH24Mykd5mFf');});
 
 LoveMyNFTrees.deployed().then(function(instance){return instance.devMint(3);});
-LoveMyNBAJams.deployed().then(function(instance){return instance.devMint(3);});
+TestNFTRoyal.deployed().then(function(instance){return instance.devMint(3);});
 LoveMyNBAJams.deployed().then(function(instance){return instance.setBaseURI('https://ipfs.io/ipfs/QmazjyJABJFNXftH9eM4wmLqrW47qvsxBxBH24Mykd5mFf');});
 LoveMyNBAJams.deployed().then(function(instance){return instance.setPublicSaleKey(12345);});
 
