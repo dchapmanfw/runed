@@ -1001,7 +1001,7 @@ function comingsoon_click(){
 
 function number_nfts_sold(){
 	
-	var mint_value=666;
+	var mint_value=0;
 	return mint_value.toString() + "/5000";
 	
 }
