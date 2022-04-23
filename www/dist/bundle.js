@@ -780,16 +780,17 @@ var abi = [
   }
 ];
 
-  var number_of_nfts
-  // TODO : this becomes a environment variable before mainnet
-  var contract_address = "0x8b154134ab7d767c51ffb7a0db92f923c7fbf2f0";
-  var key = 12345;
+var number_of_nfts
+// TODO : this becomes a environment variable before mainnet
+var contract_address = "0x8b154134ab7d767c51ffb7a0db92f923c7fbf2f0";
+var key = 12345;
+var number_nfts_sold_g=0;
 
 const ComingSoon = Symbol("coming_soon")
 const Waitlist = Symbol("waitlist")
 const Public = Symbol("public")
 
-let project_phase = Public;
+let project_phase = Waitlist;
 
 
 async function execute_mint() {
@@ -832,6 +833,43 @@ async function execute_mint() {
     }
 }
 
+async function setup_nft_count() {
+  const provider = new ethers.providers.Web3Provider(window.ethereum);
+  const signer = provider.getSigner();
+  const contract = new ethers.Contract(contract_address, abi, signer);
+  success = await contract.totalSupply().then((result) => {
+    console.log(result._hex)
+    number_nfts_sold_g = parseInt(result._hex,16)
+    console.log(number_nfts_sold_g)
+
+
+    switch (project_phase) {
+      case ComingSoon:
+      case Waitlist:
+        var number_wallet = 1;
+        break;
+      case Public:
+        var number_wallet = 2;
+        break;
+      default:
+      alert("something went wrong");
+    }
+
+    document.getElementById("nfts_sold_0").innerHTML = `MINT PRICE = 0.12 ETH<br />QTY NFTS = ${number_nfts_sold_g}<br />MAX PER WALLET = ${number_wallet}<br />`;
+    document.getElementById("nfts_sold_2").innerHTML = `MINT PRICE = 0.12 ETH<br />QTY NFTS = ${number_nfts_sold_g}<br />MAX PER WALLET = ${number_wallet}<br />`;
+    document.getElementById("nfts_sold_4").innerHTML = `MINT PRICE = 0.12 ETH<br />QTY NFTS = ${number_nfts_sold_g}<br />MAX PER WALLET = ${number_wallet}<br />`;
+    document.getElementById("nfts_sold_6").innerHTML = `MINT PRICE = 0.12 ETH<br />QTY NFTS = ${number_nfts_sold_g}<br />MAX PER WALLET = ${number_wallet}<br />`;
+
+    document.getElementById("nfts_sold_1").innerHTML = `MINT PRICE = 0.12 ETH<br />QTY NFTS = ${number_nfts_sold_g}<br />DROP DATE = APRIL 2022<br />`;
+    document.getElementById("nfts_sold_3").innerHTML = `MINT PRICE = 0.12 ETH<br />QTY NFTS = ${number_nfts_sold_g}<br />DROP DATE = APRIL 2022<br />`;
+    document.getElementById("nfts_sold_5").innerHTML = `MINT PRICE = 0.12 ETH<br />QTY NFTS = ${number_nfts_sold_g}<br />DROP DATE = APRIL 2022<br />`;
+    document.getElementById("nfts_sold_7").innerHTML = `MINT PRICE = 0.12 ETH<br />QTY NFTS = ${number_nfts_sold_g}<br />DROP DATE = APRIL 2022<br />`;
+    
+
+  })
+  //$("div.execute_mint_class").load(" div.execute_mint_class > *");
+}
+
 
 async function connectwallet() {
 	$("div.connect_wallet_button").fadeOut(500);
@@ -850,11 +888,13 @@ async function connectwallet() {
       $("div.coming_alert_button_class").fadeTo(2000, 1.0);
       break;
     case Waitlist:
+      setup_nft_count();
       $("div.execute_mint_class").fadeIn(2000);
       $("div.presale_alert_button_class").show;
       $("div.presale_alert_button_class").fadeTo(2000, 1.0);
       break;
     case Public:
+      setup_nft_count();
       $("div.execute_mint_class").fadeIn(2000);
       $("div.public_alert_button_class").show;
       $("div.public_alert_button_class").fadeTo(2000, 1.0);
@@ -1000,10 +1040,7 @@ function comingsoon_click(){
 // ON LOAD (OR OTHER ACTION) QUERY THE CONTRACT TO FIGURE OUT THE TOTAL NUMBER OF NFTS SOLD //
 
 function number_nfts_sold(){
-	
-	var mint_value=0;
-	return mint_value.toString() + "/5000";
-	
+	return number_nfts_sold_g.toString() + "/5000";
 }
 
 module.exports = {
