@@ -139,8 +139,7 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "inputs": [],
@@ -153,8 +152,7 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "inputs": [
@@ -191,8 +189,7 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "inputs": [
@@ -211,8 +208,7 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "inputs": [
@@ -236,8 +232,7 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "inputs": [],
@@ -250,8 +245,7 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "inputs": [],
@@ -264,8 +258,7 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "inputs": [],
@@ -278,8 +271,7 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "inputs": [],
@@ -292,8 +284,7 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "inputs": [
@@ -312,8 +303,7 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "inputs": [],
@@ -399,8 +389,7 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "inputs": [
@@ -437,8 +426,7 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "inputs": [],
@@ -451,8 +439,7 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "inputs": [
@@ -471,8 +458,7 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "inputs": [
@@ -496,8 +482,7 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "inputs": [
@@ -516,8 +501,7 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "inputs": [],
@@ -530,8 +514,7 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "inputs": [
@@ -570,12 +553,17 @@ var abi = [
     "type": "function"
   },
   {
-    "inputs": [],
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "quantity",
+        "type": "uint256"
+      }
+    ],
     "name": "allowlistMint",
     "outputs": [],
     "stateMutability": "payable",
-    "type": "function",
-    "payable": true
+    "type": "function"
   },
   {
     "inputs": [
@@ -593,8 +581,7 @@ var abi = [
     "name": "publicSaleMint",
     "outputs": [],
     "stateMutability": "payable",
-    "type": "function",
-    "payable": true
+    "type": "function"
   },
   {
     "inputs": [
@@ -623,8 +610,7 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "inputs": [
@@ -743,8 +729,7 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "inputs": [
@@ -775,11 +760,9 @@ var abi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   }
 ];
-
 var number_of_nfts
 // TODO : this becomes a environment variable before mainnet
 var contract_address = "0x8b154134ab7d767c51ffb7a0db92f923c7fbf2f0";
@@ -804,9 +787,11 @@ async function execute_mint() {
             console.log(ethers.utils.parseEther(mint_value).toString());
             if (project_phase == Waitlist){
               success = await contract.allowlistMint(number_of_nfts,{value : ethers.utils.parseEther(mint_value).toString()}).then((result) => {
+                console.log(result)
                 console.log(result["data"]["message"]);
                 return true;
               }, (error) => {
+                  console.log(error)
                   alert(error["error"]["message"]);
                   return false
               });
@@ -815,6 +800,7 @@ async function execute_mint() {
                 console.log(result["data"]["message"]);
                 return true;
               }, (error) => {
+                console.log(error)
                 alert(error["error"]["message"]);
                 return false
               });
@@ -855,10 +841,10 @@ async function setup_nft_count() {
       alert("something went wrong");
     }
 
-    document.getElementById("nfts_sold_0").innerHTML = `MINT PRICE = 0.12 ETH<br />QTY NFTS = ${number_nfts_sold_g}<br />MAX PER WALLET = ${number_wallet}<br />`;
-    document.getElementById("nfts_sold_2").innerHTML = `MINT PRICE = 0.12 ETH<br />QTY NFTS = ${number_nfts_sold_g}<br />MAX PER WALLET = ${number_wallet}<br />`;
-    document.getElementById("nfts_sold_4").innerHTML = `MINT PRICE = 0.12 ETH<br />QTY NFTS = ${number_nfts_sold_g}<br />MAX PER WALLET = ${number_wallet}<br />`;
-    document.getElementById("nfts_sold_6").innerHTML = `MINT PRICE = 0.12 ETH<br />QTY NFTS = ${number_nfts_sold_g}<br />MAX PER WALLET = ${number_wallet}<br />`;
+    document.getElementById("nfts_sold_0").innerHTML = `MINT PRICE = 0.12 ETH<br />QTY NFTS = ${number_nfts_sold_g}/5000<br />MAX PER WALLET = ${number_wallet}<br />`;
+    document.getElementById("nfts_sold_2").innerHTML = `MINT PRICE = 0.12 ETH<br />QTY NFTS = ${number_nfts_sold_g}/5000<br />MAX PER WALLET = ${number_wallet}<br />`;
+    document.getElementById("nfts_sold_4").innerHTML = `MINT PRICE = 0.12 ETH<br />QTY NFTS = ${number_nfts_sold_g}/5000<br />MAX PER WALLET = ${number_wallet}<br />`;
+    document.getElementById("nfts_sold_6").innerHTML = `MINT PRICE = 0.12 ETH<br />QTY NFTS = ${number_nfts_sold_g}/5000<br />MAX PER WALLET = ${number_wallet}<br />`;
 
     document.getElementById("nfts_sold_1").innerHTML = `MINT PRICE = 0.12 ETH<br />QTY NFTS = ${number_nfts_sold_g}<br />DROP DATE = APRIL 2022<br />`;
     document.getElementById("nfts_sold_3").innerHTML = `MINT PRICE = 0.12 ETH<br />QTY NFTS = ${number_nfts_sold_g}<br />DROP DATE = APRIL 2022<br />`;
