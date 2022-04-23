@@ -1,6 +1,7 @@
 # 1 MetaData Reference
-NAME = "TreeFT"
+NAME = "NBA_JAM_2"
 TYPE = "mp4"
+DESCRIPTION = "HELLO\n\n––\nI am an NFT\n\n––\nA pretty cool nft\n\n––\nOther Info Goes Here"
 
 
 DAMN_IT = {

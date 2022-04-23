@@ -30,6 +30,7 @@ class Metadata:
         serial_number_two,
         serial_number_three,
         html="test.gov",
+        image_html="test",
         token_id="1",
         file_name = "",
     ):
@@ -37,8 +38,10 @@ class Metadata:
         self.serial_number_two_ = serial_number_two
         self.serial_number_three_ = serial_number_three
         self.html_ = html
+        self.image_html_ = image_html
         self.token_id_ = token_id
         self.file_name_ = file_name
+
 
     def get_property_list(self):
         return self.property_list_
@@ -67,7 +70,9 @@ class Metadata:
             attribute_list.append(trait_dict)
         json_dict = {
             "name": f"{property_dicts.NAME} #{self.token_id_}",
-            "image": f"{self.html_}/{self.file_name_}",
+            "image": f"{self.image_html_}/{self.file_name_}.jpg",
+            "description": property_dicts.DESCRIPTION,
+            "animation_url": f"{self.html_}/{self.file_name_}.mp4",
             "attributes": attribute_list,
         }
         if not test:
@@ -109,7 +114,8 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     json_file_count = 0
-    image_ipfs = "https://arweave.net/ahlV0avN05uzx7eFnZo25mepNOmALTKIBeAXhUwBBX0"
+    video_ipfs = "https://arweave.net/ahlV0avN05uzx7eFnZo25mepNOmALTKIBeAXhUwBBX0"
+    image_ipfs = "https://ipfs.io/ipfs/Qme74CVQqthWbKAF8UnYoMGBdrXZvS2Y3EnxXXPtwt9p48"
 
     master_list = list()
 
@@ -122,10 +128,11 @@ if __name__ == "__main__":
             serial_number_1,
             serial_number_2,
             serial_number_3,
+            video_ipfs,
             image_ipfs,
             json_file_count,
             # TODO[dchapman] : make sure that the final has no \nm
-            line.split("\n")[0],
+            line.split("\n")[0].split(".mp4")[0],
         )
         master_list.append(m.generate_json(False))
         json_file_count += 1

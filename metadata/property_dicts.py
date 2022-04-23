@@ -1,6 +1,7 @@
 # 1 MetaData Reference
 NAME = "Run Ed"
 TYPE = "mp4"
+DESCRIPTION = "EXT. WEB3 -- LOCATION UNKNOWN\n\nED B \“The Puppet\” frantically races off to audition for his own show...will he make it?\n\nRun Ed. Run Ed. Run!\n\n1:1 | 1920 x 1920 | H.264"
 
 DAMN_IT = {
     "property_group": "Damn it",
