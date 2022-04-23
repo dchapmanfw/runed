@@ -772,7 +772,7 @@ const ComingSoon = Symbol("coming_soon")
 const Waitlist = Symbol("waitlist")
 const Public = Symbol("public")
 
-let project_phase = Waitlist;
+let project_phase = Public;
 
 
 async function execute_mint() {
