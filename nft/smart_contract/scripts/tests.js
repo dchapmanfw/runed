@@ -15,7 +15,7 @@ LoveMyNBAJams.deployed().then(function(instance){return instance.setBaseURI('htt
 LoveMyNBAJams.deployed().then(function(instance){return instance.setPublicSaleKey(12345);});
 
 let timesalestart = Math.round(Date.now() / 1000);
-LoveMyNBAJams.deployed().then(function(instance){return instance.setupSaleInfo(web3.utils.toWei('.12', 'ether'),web3.utils.toWei('.12', 'ether'),timesalestart);});
+TestNFTRoyal.deployed().then(function(instance){return instance.setupSaleInfo(web3.utils.toWei('.12', 'ether'),web3.utils.toWei('.12', 'ether'),0);});
 
 
-LoveMyNBAJams.deployed().then(function(instance){return instance.totalSupply();});
+TestNFTRoyal.deployed().then(function(instance){return instance.seedAllowlist(wait_list, mint_count);});

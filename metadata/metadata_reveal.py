@@ -1,19 +1,17 @@
 from inspect import Attribute
 import json
 
-NAME = "NBAJAM"
-IMAGE_HTML = "https://ipfs.io/ipfs/QmPr7iNcptu3xFfThRb5R9HaTXTRCsBgDfqvnwyMjfMb4e"
-ATTRIBUTE = ({
-    "trait_type" : "location",
-    "value": "unknown"
-},)
-ATTRIBUTE_ED = ({"trait_type" : "location", "value": "unknown",}, {"trait_type" : "puppet", "value": "ed",})
+NAME = "Run Ed."
+IMAGE_HTML = "https://runed.mypinata.cloud/ipfs/QmYRLGvnNUgdRNDgCemd31irarTpVG1SjKP5PfiQiFkmiY"
+FILE_NAME = "ED-B_FUCK-THE-METAVERSE"
+ATTRIBUTE_ED = ({"trait_type" : "Location", "value": "Unknown"}, {"trait_type" : "Puppet", "value": "Ed"})
 
-for x in range(10):
+for x in range(5001):
     json_dict = {
     "name": f"{NAME} #{x}",
-    "image": f"{IMAGE_HTML}",
-    "attributes": ATTRIBUTE,
+    "image": f"{IMAGE_HTML}/{FILE_NAME}.jpg",
+    "animation_url": f"{IMAGE_HTML}/{FILE_NAME}.mp4",
+    "attributes": ATTRIBUTE_ED,
     }
     with open(f"{x}", "w") as f:
         json.dump(json_dict, f, indent=4)

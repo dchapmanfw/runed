@@ -172,8 +172,8 @@ contract('RunEd: test base logic of contract', (accounts) => {
         // seven should work now
         await truffleAssert.passes(token.allowlistMint(1, { from: tokenHolderSevenAddress,
                 value: web3.utils.toWei('.12', 'ether')}));
-            await truffleAssert.fails(token.allowlistMint(1, { from: tokenHolderSevenAddress,
-                value: web3.utils.toWei('.12', 'ether')}));
+        await truffleAssert.fails(token.allowlistMint(1, { from: tokenHolderSevenAddress,
+            value: web3.utils.toWei('.12', 'ether')}));
     });
 
     it('is not possible to withdraw unless owner', async () => {
