@@ -4,6 +4,23 @@
 const { ethers } = require("ethers");
 
 
+const Redis = require("ioredis");
+
+(async () => {
+  // Create a Redis instance.
+  // By default, it will connect to localhost:6379.
+  // We are going to cover how to specify connection options soon.
+  const redis = new Redis();
+  // ioredis supports the node.js callback style
+  redis.get("CONTRACT_ADDRESS", (err, result) => {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log(result); // Prints "value"
+    }
+  })
+})();
+
 // TODO : this becomes a environment variable
 var abi = [
   {
