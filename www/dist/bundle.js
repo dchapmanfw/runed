@@ -765,7 +765,7 @@ var abi = [
 ];
 var number_of_nfts
 // TODO : this becomes a environment variable before mainnet
-var contract_address = "0x8b154134ab7d767c51ffb7a0db92f923c7fbf2f0";
+var contract_address = "0x7d140AA7BE6cc30BD61531c2dd09e55Fe514369F";
 var key = 12345;
 var number_nfts_sold_g=0;
 
