@@ -765,7 +765,7 @@ var abi = [
 ];
 var number_of_nfts
 
-var contract_address = "0xd6df4bd37caa9b376bf7fcf37b8cefe38f3447e4";
+var contract_address = "0x9902037397c0909b440cBE5EED8e5eb84a2d7BA8";
 var number_nfts_sold_g=0;
 
 const ComingSoon = Symbol("coming_soon")
