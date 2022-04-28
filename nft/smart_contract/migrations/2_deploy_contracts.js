@@ -4,13 +4,13 @@ const RunEd = artifacts.require("RunEd");
 module.exports = function (deployer) {
   const maxBatchSize = 2;
   const collectionSize = 5000;
-  const amountfordevs = 18;
+  const amountfordevs = 172;
   deployer.deploy(RunEd, maxBatchSize , collectionSize,amountfordevs);
 };
 
 // module.exports = function (deployer) {
-//   const maxBatchSize = 3;
-//   const collectionSize = 20;
-//   const amountfordevs = 6;
+//   const maxBatchSize = 2;
+//   const collectionSize = 5000;
+//   const amountfordevs = 172;
 //   deployer.deploy(Tree, maxBatchSize , collectionSize,amountfordevs);
 // };

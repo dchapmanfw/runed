@@ -54,7 +54,7 @@ contract TestNFTRoyal is Ownable, ERC721A, ReentrancyGuard {
     uint256 maxBatchSize_,
     uint256 collectionSize_,
     uint256 amountForDevs_
-  ) ERC721A("TestNFTRoyal", "TestNFTRoyal", maxBatchSize_, collectionSize_) {
+  ) ERC721A("TestNFTDonut", "TestNFTDonut", maxBatchSize_, collectionSize_) {
     maxPerAddressDuringMint = maxBatchSize_;
     amountForDevs = amountForDevs_;
     require(

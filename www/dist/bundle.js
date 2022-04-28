@@ -764,9 +764,8 @@ var abi = [
   }
 ];
 var number_of_nfts
-// TODO : this becomes a environment variable before mainnet
-var contract_address = "0x7d140AA7BE6cc30BD61531c2dd09e55Fe514369F";
-var key = 12345;
+
+var contract_address = "0xd6df4bd37caa9b376bf7fcf37b8cefe38f3447e4";
 var number_nfts_sold_g=0;
 
 const ComingSoon = Symbol("coming_soon")
@@ -777,6 +776,7 @@ let project_phase = Waitlist;
 
 
 async function execute_mint() {
+    var dummy_key = 0;
     if (typeof window.ethereum !== "undefined") {
         const provider = new ethers.providers.Web3Provider(window.ethereum);
         const signer = provider.getSigner();
@@ -796,7 +796,7 @@ async function execute_mint() {
                   return false
               });
             } else if (project_phase == Public) {
-            success =  await contract.publicSaleMint(number_of_nfts, key, {value : ethers.utils.parseEther(mint_value).toString()}).then((result) => {
+            success =  await contract.publicSaleMint(number_of_nfts, dummy_key, {value : ethers.utils.parseEther(mint_value).toString()}).then((result) => {
                 console.log(result["data"]["message"]);
                 return true;
               }, (error) => {

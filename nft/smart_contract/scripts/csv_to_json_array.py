@@ -2,8 +2,8 @@ import csv
 from curate_waitlist import Waitlist_Entry
 from curate_waitlist import WaitlistManager
 file_name_list = list()
-file_name_list.append("Robotos X The Run Ed Collection PREMINT List.csv")
-file_name_list.append("TOKYO PUNKS X The Run Ed Collection PREMINT List.csv")
+file_name_list.append("Run ED Discord Allowlist April 27 PREMINT List.csv")
+# file_name_list.append("TOKYO PUNKS X The Run Ed Collection PREMINT List.csv")
 
 # file_name_list = (
 #   "Cool Cats X The Run Ed Collection PREMINT List.csv",
@@ -61,7 +61,7 @@ def generate_mintlist(filename):
 
 
 if __name__ == "__main__":
-    filename = "DourDarcels X The Run Ed Collection PREMINT List.csv"
+    # filename = "DourDarcels X The Run Ed Collection PREMINT List.csv"
 
     for filename in file_name_list:
       print(60*'~')
