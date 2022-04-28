@@ -1011,7 +1011,7 @@ function publicmint_click(){
 
 function presale_click(){
 	
-	alert("Currently minting Run Ed for users on the Presale List. Public minting will be availble soon. Please join our Discord for project updates :)")
+	alert("If you've confirmed your wallet is on the presale list, please scroll down to mint :)")
 	
 }
 

@@ -31,7 +31,7 @@ RunEd.deployed().then(function(instance){return instance.setupSaleInfo(web3.util
 
 
 // Test Contract
-TestNFTRoyal.deployed().then(function(instance){return instance.withdrawMoney();});
+RunEd.deployed().then(function(instance){return instance.withdrawMoney();});
 
 RunEd.deployed().then(function(instance){return instance.setBaseURI('https://ipfs.io/ipfs/QmazjyJABJFNXftH9eM4wmLqrW47qvsxBxBH24Mykd5mFf');});
 
