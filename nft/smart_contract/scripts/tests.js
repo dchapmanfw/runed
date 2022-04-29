@@ -28,7 +28,7 @@ RunEd.deployed().then(function(instance){return instance.setupSaleInfo(web3.util
 // setup public list
 let timesalestart = Math.round(Date.now() / 1000);
 RunEd.deployed().then(function(instance){return instance.setupSaleInfo(web3.utils.toWei('.12', 'ether'),web3.utils.toWei('.12', 'ether'),timesalestart);});
-RunEd.deployed().then(function(instance){return instance.setPublicSaleKey(12345);});
+RunEd.deployed().then(function(instance){return instance.setPublicSaleKey(867543);});
 
 // Test Contract
 RunEd.deployed().then(function(instance){return instance.withdrawMoney();});

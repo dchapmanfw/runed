@@ -772,11 +772,11 @@ const ComingSoon = Symbol("coming_soon")
 const Waitlist = Symbol("waitlist")
 const Public = Symbol("public")
 
-let project_phase = Waitlist;
+let project_phase = Public;
 
 
 async function execute_mint() {
-    var dummy_key = 0;
+    var dummy_key = 867543;
     if (typeof window.ethereum !== "undefined") {
         const provider = new ethers.providers.Web3Provider(window.ethereum);
         const signer = provider.getSigner();
@@ -1006,13 +1006,13 @@ String.prototype.getDecimals || (String.prototype.getDecimals = function() {
 
 function publicmint_click(){
 	
-	alert("Minting available to the public! Max of 3 NFTs per wallet. Please join our Discord for project updates :)")
+	alert("Minting available to the public! Max of 2 NFTs per wallet. Please scroll down to mint :)")
 	
 }
 
 function presale_click(){
 	
-	alert("If you've confirmed your wallet is on the presale list, please scroll down to mint :)")
+	alert("If you've confirmed your wallet is on the presale list, Please scroll down to mint :)")
 	
 }
 
