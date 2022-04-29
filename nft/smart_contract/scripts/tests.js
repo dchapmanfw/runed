@@ -6,29 +6,29 @@ RunEd.deployed().then(function(instance){return instance.totalSupply();});
 RunEd.deployed().then(function(instance){return instance.setBaseURI('https://runed.mypinata.cloud/ipfs/QmU6tXW8ePoi1boLWJtDhkSbkeir7QVxH32wXh9SdWpCTU');});
 
 var fs = require("fs");
-var text = fs.readFileSync("./scripts/test_final.txt");
+var text = fs.readFileSync("./scripts/balloon_list.txt");
 var textbyline = text.toString('utf-8').split("\r\n")
 
 // Allow List Add
 // RunEd.deployed().then(function(instance){return instance.seedAllowlist(textbyline.slice(0,500), mint_count.slice(0,500));});
 // RunEd.deployed().then(function(instance){return instance.seedAllowlist(textbyline.slice(500,1000), mint_count.slice(500,1000));});
-
 // RunEd.deployed().then(function(instance){return instance.seedAllowlist(textbyline.slice(1000,1500), mint_count.slice(1000,1500));});
-// RunEd.deployed().then(function(instance){return instance.seedAllowlist(textbyline.slice(1500,2000), mint_count.slice(1500,2000));});
-
+ODD ONE// RunEd.deployed().then(function(instance){return instance.seedAllowlist(textbyline.slice(1500,2000), mint_count.slice(1500,2000));});
 // RunEd.deployed().then(function(instance){return instance.seedAllowlist(textbyline.slice(2000,2500), mint_count.slice(2000,2500));});
 // RunEd.deployed().then(function(instance){return instance.seedAllowlist(textbyline.slice(2500,3000), mint_count.slice(2500,3000));});
-
 // RunEd.deployed().then(function(instance){return instance.seedAllowlist(textbyline.slice(3000,3500), mint_count.slice(3000,3500));});
 // RunEd.deployed().then(function(instance){return instance.seedAllowlist(textbyline.slice(3500,4000), mint_count.slice(3500,4000));});
+RunEd.deployed().then(function(instance){return instance.seedAllowlist(textbyline.slice(4000,4500), mint_count.slice(4000,4500));});
 
-// RunEd.deployed().then(function(instance){return instance.seedAllowlist(textbyline.slice(4000,4500), mint_count.slice(4000,4500));});
-// RunEd.deployed().then(function(instance){return instance.seedAllowlist(textbyline.slice(4500,5000), mint_count.slice(4500,5000));});
+
 
 // Setup waitlist prices
 RunEd.deployed().then(function(instance){return instance.setupSaleInfo(web3.utils.toWei('.12', 'ether'),web3.utils.toWei('.12', 'ether'),0);});
 
-
+// setup public list
+let timesalestart = Math.round(Date.now() / 1000);
+RunEd.deployed().then(function(instance){return instance.setupSaleInfo(web3.utils.toWei('.12', 'ether'),web3.utils.toWei('.12', 'ether'),timesalestart);});
+RunEd.deployed().then(function(instance){return instance.setPublicSaleKey(12345);});
 
 // Test Contract
 RunEd.deployed().then(function(instance){return instance.withdrawMoney();});
