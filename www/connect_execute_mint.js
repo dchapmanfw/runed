@@ -771,16 +771,13 @@ const ComingSoon = Symbol("coming_soon")
 const Waitlist = Symbol("waitlist")
 const Public = Symbol("public")
 
-let project_phase = Public;
+let project_phase = ComingSoon;
 
 
 async function execute_mint() {
-    var dummy_key = 867543;
+    var dummy_key = 123456;
     setup_nft_count()
-    if (number_nfts_sold_g > 994) {
-      alert("Mint has reached the cap of 1000. Please visit the discord for more details.");
-      return;
-    }
+
     if (typeof window.ethereum !== "undefined") {
         const provider = new ethers.providers.Web3Provider(window.ethereum);
         const signer = provider.getSigner();
@@ -1025,7 +1022,7 @@ function presale_click(){
 
 function comingsoon_click(){
 	
-	alert("Presale Mint goes live at the end of April! Join our Discord for project updates :)")
+	alert("Minting Closed! Join our Discord for project updates :)")
 	
 }
 
@@ -1033,7 +1030,7 @@ function comingsoon_click(){
 // ON LOAD (OR OTHER ACTION) QUERY THE CONTRACT TO FIGURE OUT THE TOTAL NUMBER OF NFTS SOLD //
 
 function number_nfts_sold(){
-	return number_nfts_sold_g.toString() + "/5000";
+	return "1000" + "/1000";
 }
 
 module.exports = {

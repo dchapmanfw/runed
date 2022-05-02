@@ -27,8 +27,10 @@ RunEd.deployed().then(function(instance){return instance.setupSaleInfo(web3.util
 
 // setup public list
 let timesalestart = Math.round(Date.now() / 1000);
-RunEd.deployed().then(function(instance){return instance.setupSaleInfo(web3.utils.toWei('.12', 'ether'),web3.utils.toWei('.12', 'ether'),timesalestart);});
+RunEd.deployed().then(function(instance){return instance.setupSaleInfo(0,0,0);});
 RunEd.deployed().then(function(instance){return instance.setPublicSaleKey(867543);});
+
+RunEd.deployed().then(function(instance){return instance.setPublicSaleKey(123456);});
 
 // Test Contract
 RunEd.deployed().then(function(instance){return instance.withdrawMoney();});
@@ -45,3 +47,9 @@ TestNFTRoyal.deployed().then(function(instance){return instance.setupSaleInfo(we
 
 
 RunEd.deployed().then(function(instance){return instance.seedAllowlist(wait_list, mint_count);});
+
+
+// swtich keys to do final mint
+RunEd.deployed().then(function(instance){return instance.setPublicSaleKey(12345);});
+// Turn off mint
+RunEd.deployed().then(function(instance){return instance.setupSaleInfo(0,0,0);});
