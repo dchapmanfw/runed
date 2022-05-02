@@ -6,7 +6,7 @@ IMAGE_HTML = "https://runed.mypinata.cloud/ipfs/QmYRLGvnNUgdRNDgCemd31irarTpVG1S
 FILE_NAME = "ED-B_FUCK-THE-METAVERSE"
 ATTRIBUTE_ED = ({"trait_type" : "Location", "value": "Unknown"}, {"trait_type" : "Puppet", "value": "Ed"})
 
-for x in range(5001):
+for x in range(1000, 1010):
     json_dict = {
     "name": f"{NAME} #{x}",
     "image": f"{IMAGE_HTML}/{FILE_NAME}.jpg",

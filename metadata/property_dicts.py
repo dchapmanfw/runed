@@ -159,9 +159,9 @@ ROAD = {
     "number": 2,
     "property": (
         "Sand",
+        "Concrete",
         "Red Carpet",
         "Asphalt",
-        "Concrete",
     ),
 }
 GROUND = {

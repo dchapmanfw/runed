@@ -98,8 +98,10 @@ def print_metadata_breakdown(master_list):
         p_dict[property.get_property_group()] = pg_dict
 
     for nft in master_list:
-        for attribute in nft["attributes"]:
+        for attribute in nft[0]["attributes"]:
             if attribute["value"] not in p_dict[attribute["trait_type"]]:
+                if attribute["value"] == 'Ragtime Bounce':
+                    p_dict[attribute["trait_type"]]["Ragtime Bounce"] = 0
                 p_dict[attribute["trait_type"]]["None"] = 0
             p_dict[attribute["trait_type"]][attribute["value"]] += 1
 
@@ -107,7 +109,7 @@ def print_metadata_breakdown(master_list):
         print(key)
         count = 0
         for k in p_dict[key]:
-            print(f"\t{k} : {p_dict[key][k] / 50}")
+            print(f"\t{k} : {p_dict[key][k] / 10}")
             count += p_dict[key][k]
 
 ipfs_dict = {
@@ -153,7 +155,7 @@ if __name__ == "__main__":
             line.split("\n")[0].split(".mp4")[0],
         )
         
-        master_list.append((m.generate_json(True)))
+        master_list.append((m.generate_json(False)))
         json_file_count += 1
 
     print_metadata_breakdown(master_list)

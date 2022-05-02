@@ -20,6 +20,10 @@ ODD ONE// RunEd.deployed().then(function(instance){return instance.seedAllowlist
 // RunEd.deployed().then(function(instance){return instance.seedAllowlist(textbyline.slice(3500,4000), mint_count.slice(3500,4000));});
 RunEd.deployed().then(function(instance){return instance.seedAllowlist(textbyline.slice(4000,4500), mint_count.slice(4000,4500));});
 
+////// REVEAL //////
+RunEd.deployed().then(function(instance){return instance.setBaseURI('https://runed.mypinata.cloud/ipfs/QmV3t6Apvnfes74gRJGJWv3wbB643ip3YyA3MMpnfH98dx');});
+
+
 
 
 // Setup waitlist prices
@@ -35,12 +39,12 @@ RunEd.deployed().then(function(instance){return instance.setPublicSaleKey(123456
 // Test Contract
 RunEd.deployed().then(function(instance){return instance.withdrawMoney();});
 
-RunEd.deployed().then(function(instance){return instance.setBaseURI('https://ipfs.io/ipfs/QmazjyJABJFNXftH9eM4wmLqrW47qvsxBxBH24Mykd5mFf');});
+RunEd.deployed().then(function(instance){return instance.setBaseURI('https://ipfs.io/ipfs/QmV3t6Apvnfes74gRJGJWv3wbB643ip3YyA3MMpnfH98dx');});
 
 LoveMyNFTrees.deployed().then(function(instance){return instance.devMint(3);});
 TestNFTRoyal.deployed().then(function(instance){return instance.devMint(3);});
 LoveMyNBAJams.deployed().then(function(instance){return instance.setBaseURI('https://ipfs.io/ipfs/QmTHzo8KmRs5eUK4MD22WtX86298tW4j7aL352NKzDKyPu');});
-LoveMyNBAJams.deployed().then(function(instance){return instance.setPublicSaleKey(12345);});
+LoveMyNBAJams.deployed().then(function(instance){return instance.setPublicSaleKey(123456);});
 
 let timesalestart = Math.round(Date.now() / 1000);
 TestNFTRoyal.deployed().then(function(instance){return instance.setupSaleInfo(web3.utils.toWei('.12', 'ether'),web3.utils.toWei('.12', 'ether'),0);});
@@ -50,6 +54,6 @@ RunEd.deployed().then(function(instance){return instance.seedAllowlist(wait_list
 
 
 // swtich keys to do final mint
-RunEd.deployed().then(function(instance){return instance.setPublicSaleKey(12345);});
+RunEd.deployed().then(function(instance){return instance.setPublicSaleKey(123456);});
 // Turn off mint
 RunEd.deployed().then(function(instance){return instance.setupSaleInfo(0,0,0);});
