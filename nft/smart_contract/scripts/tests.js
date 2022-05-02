@@ -44,4 +44,4 @@ let timesalestart = Math.round(Date.now() / 1000);
 TestNFTRoyal.deployed().then(function(instance){return instance.setupSaleInfo(web3.utils.toWei('.12', 'ether'),web3.utils.toWei('.12', 'ether'),0);});
 
 
-TestNFTRoyal.deployed().then(function(instance){return instance.seedAllowlist(wait_list, mint_count);});
+RunEd.deployed().then(function(instance){return instance.seedAllowlist(wait_list, mint_count);});

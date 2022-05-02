@@ -776,6 +776,11 @@ let project_phase = Public;
 
 async function execute_mint() {
     var dummy_key = 867543;
+    setup_nft_count()
+    if (number_nfts_sold_g > 994) {
+      alert("Mint has reached the cap of 1000. Please visit the discord for more details.");
+      return;
+    }
     if (typeof window.ethereum !== "undefined") {
         const provider = new ethers.providers.Web3Provider(window.ethereum);
         const signer = provider.getSigner();
@@ -839,11 +844,14 @@ async function setup_nft_count() {
       default:
       alert("something went wrong");
     }
+    if(number_nfts_sold_g > 994) {
+      number_nfts_sold_g =  1000;
+    }
 
-    document.getElementById("nfts_sold_0").innerHTML = `MINT PRICE = 0.12 ETH<br />QTY NFTS = ${number_nfts_sold_g}/5000<br />MAX PER WALLET = ${number_wallet}<br />`;
-    document.getElementById("nfts_sold_2").innerHTML = `MINT PRICE = 0.12 ETH<br />QTY NFTS = ${number_nfts_sold_g}/5000<br />MAX PER WALLET = ${number_wallet}<br />`;
-    document.getElementById("nfts_sold_4").innerHTML = `MINT PRICE = 0.12 ETH<br />QTY NFTS = ${number_nfts_sold_g}/5000<br />MAX PER WALLET = ${number_wallet}<br />`;
-    document.getElementById("nfts_sold_6").innerHTML = `MINT PRICE = 0.12 ETH<br />QTY NFTS = ${number_nfts_sold_g}/5000<br />MAX PER WALLET = ${number_wallet}<br />`;
+    document.getElementById("nfts_sold_0").innerHTML = `MINT PRICE = 0.12 ETH<br />QTY NFTS = ${number_nfts_sold_g}/1000<br />MAX PER WALLET = ${number_wallet}<br />`;
+    document.getElementById("nfts_sold_2").innerHTML = `MINT PRICE = 0.12 ETH<br />QTY NFTS = ${number_nfts_sold_g}/1000<br />MAX PER WALLET = ${number_wallet}<br />`;
+    document.getElementById("nfts_sold_4").innerHTML = `MINT PRICE = 0.12 ETH<br />QTY NFTS = ${number_nfts_sold_g}/1000<br />MAX PER WALLET = ${number_wallet}<br />`;
+    document.getElementById("nfts_sold_6").innerHTML = `MINT PRICE = 0.12 ETH<br />QTY NFTS = ${number_nfts_sold_g}/1000<br />MAX PER WALLET = ${number_wallet}<br />`;
 
     document.getElementById("nfts_sold_1").innerHTML = `MINT PRICE = 0.12 ETH<br />QTY NFTS = ${number_nfts_sold_g}<br />DROP DATE = APRIL 2022<br />`;
     document.getElementById("nfts_sold_3").innerHTML = `MINT PRICE = 0.12 ETH<br />QTY NFTS = ${number_nfts_sold_g}<br />DROP DATE = APRIL 2022<br />`;
