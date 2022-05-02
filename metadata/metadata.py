@@ -65,6 +65,10 @@ class Metadata:
                     "trait_type": prop.get_property_group(),
                     "value": prop.get_trait(self.serial_number_three_),
                 }
+                if self.serial_number_three_ == 1:
+                    for attribute in attribute_list:
+                        if attribute["trait_type"] == "Music":
+                            attribute["value"] = "Ragtime Bounce"
             else:
                 raise "Invalid serial number selection in property"
             attribute_list.append(trait_dict)
@@ -79,7 +83,7 @@ class Metadata:
             # json_object = json.dumps(json_dict, indent=4)
             with open(f"{self.token_id_}", "w") as f:
                 json.dump(json_dict, f, indent=4)
-        return json_dict
+        return json_dict , self.file_name_
 
 
 def print_metadata_breakdown(master_list):
@@ -106,6 +110,19 @@ def print_metadata_breakdown(master_list):
             print(f"\t{k} : {p_dict[key][k] / 50}")
             count += p_dict[key][k]
 
+ipfs_dict = {
+    0 : "https://runed.mypinata.cloud/ipfs/Qmea5Wh2zDehPptNwizvrVGfCDQg8QBzVTUPCTFBri7dAi",
+    1 : "https://runed.mypinata.cloud/ipfs/QmVpBJzU1GTREqWXhVS8FBwbFN9WHNijE93fMmih9WHmey",
+    2 : "https://runed.mypinata.cloud/ipfs/QmVeo2CzZzQswCoP7muXETtPWPa5vSndUV4mbYxHX4unU4",
+    3 : "https://runed.mypinata.cloud/ipfs/QmSwUQwwNypgkhZEh66xhEshteW2MNf8zkEvXmuaCN3XhM",
+    4 : "https://runed.mypinata.cloud/ipfs/QmS9dBzbT8utXMYhK59KCj35FSp5DnSYeNLfyuJv7JAFSW",
+    5 : "https://runed.mypinata.cloud/ipfs/QmT4YHKZmFKPYyKEd988RNmkCBrQoedDXfJWZBC23mbRq3",
+    6 : "https://runed.mypinata.cloud/ipfs/QmUyGUmJPR5f4YwSoPSHLod2kvDuzpvUrsZMmxZLV77pbD",
+    7 : "https://runed.mypinata.cloud/ipfs/QmU6zBnAAT7TcsM62vfbsfXRnUSt13muxg7ELqGZV2pyTD",
+    8 : "https://runed.mypinata.cloud/ipfs/QmaQMPVDt9LjNZk5vgFekHTTHwmiMKJ84P72yFdyiaqLnP",
+    9 : "https://runed.mypinata.cloud/ipfs/QmPVo9SFsfTdM2hJn2JWAifqhPwhU9Y4a6qWqtjZPf9FLu",
+}
+
 
 if __name__ == "__main__":
 
@@ -121,20 +138,22 @@ if __name__ == "__main__":
 
     for line in args.file.readlines():
         splits = line.split("_")
-        serial_number_3 = int(splits[0])
-        serial_number_2 = int(splits[1])
-        serial_number_1 = int(splits[2].split(".")[0])
+        bin_number = int(splits[0])
+        serial_number_3 = int(splits[1])
+        serial_number_2 = int(splits[2])
+        serial_number_1 = int(splits[3].split(".")[0])
         m = Metadata(
             serial_number_1,
             serial_number_2,
             serial_number_3,
-            video_ipfs,
-            image_ipfs,
+            ipfs_dict[bin_number],
+            ipfs_dict[bin_number],
             json_file_count,
             # TODO[dchapman] : make sure that the final has no \nm
             line.split("\n")[0].split(".mp4")[0],
         )
-        master_list.append(m.generate_json(False))
+        
+        master_list.append((m.generate_json(True)))
         json_file_count += 1
 
     print_metadata_breakdown(master_list)
