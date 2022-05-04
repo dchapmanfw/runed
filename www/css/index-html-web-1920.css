@@ -6945,8 +6945,7 @@ font-style: normal;
 }
 
 .coming_alert_button_class{
-	display: none;
-	opacity: 0.0;
+	opacity: 100.0;
 	
 }
 
@@ -6958,7 +6957,7 @@ font-style: normal;
 
 /*hide role-specific div html*/
 div.coming_soon_class {
-display: none;
+  opacity: 100.0;
 }
 
 div.execute_mint_class {
